@@ -76,7 +76,7 @@ export function AppFooter() {
 
         <div className="flex flex-col justify-between gap-3 pt-6 text-[11px] text-white/30 sm:flex-row">
           <span>© 2026 {company.name} {company.legalSuffix}. All rights reserved.</span>
-          <span>Built for better moves in Zimbabwe.</span>
+          <span>Developed &amp; Maintained by <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="font-semibold text-white/45 transition hover:text-white">Spiritus Systems</a> — <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">spiritusglobal.tech</a></span>
         </div>
       </section>
     </footer>
