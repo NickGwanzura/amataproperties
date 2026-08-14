@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Leaflet stand-map label overrides ── */
+.sn-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 0 !important;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sn-label::before { display: none !important; }
+
+.sn-amenity-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #1e293b;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  padding: 0 !important;
+  pointer-events: none;
+}
+.sn-amenity-label::before { display: none !important; }
+
+/* Fix Leaflet container z-index conflicts with sticky nav */
+.leaflet-pane { z-index: 1 !important; }
+.leaflet-top, .leaflet-bottom { z-index: 2 !important; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+:root {
+  /* Typography */
+  --font-heading: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+
+  /* Amata premium red-and-black palette */
+  --background: 0 0% 98%;
+  --foreground: 345 20% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 33% 9%;
+  --primary: 355 81% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 32 37% 93%;
+  --secondary-foreground: 24 20% 16%;
+  --muted: 32 37% 93%;
+  --muted-foreground: 30 12% 36%;
+  --accent: 355 80% 46%;
+  --accent-foreground: 0 0% 100%;
+  --border: 33 24% 82%;
+  --input: 33 24% 78%;
+  --ring: 34 64% 35%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 71% 35%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 92% 40%;
+  --warning-foreground: 0 0% 100%;
+  --radius: 8px;
+}
+
+.dark {
+  --background: 30 33% 5%;
+  --foreground: 40 41% 97%;
+  --card: 24 20% 10%;
+  --card-foreground: 40 41% 97%;
+  --primary: 355 75% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24 20% 16%;
+  --secondary-foreground: 40 41% 97%;
+  --muted: 24 20% 14%;
+  --muted-foreground: 33 24% 72%;
+  --accent: 355 80% 40%;
+  --accent-foreground: 0 0% 100%;
+  --border: 24 20% 22%;
+  --input: 24 20% 22%;
+  --ring: 34 40% 52%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 60% 40%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 80% 45%;
+  --warning-foreground: 0 0% 100%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* Display headings — Instrument Sans throughout the Amata brand system */
+h1.display,
+.display-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  outline-color: hsl(var(--ring));
+}
+
+input,
+select,
+textarea {
+  min-height: 2.75rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background));
+  padding: 0.625rem 0.75rem;
+  color: hsl(var(--foreground));
+  transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+textarea {
+  min-height: 7rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.14);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: hsl(var(--muted-foreground) / 0.72);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
+
+@layer components {
+  .premium-panel {
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border) / 0.7);
+    background: hsl(var(--card));
+    box-shadow: 0 1px 3px hsl(120 10% 12% / 0.05), 0 4px 16px hsl(120 10% 12% / 0.06);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .premium-panel:has(> a:hover),
+  .premium-panel:has(> button:hover) {
+    border-color: hsl(var(--ring) / 0.2);
+  }
+
+  .dashboard-page {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding: 2.5rem 1rem;
+    animation: page-in 220ms ease both;
+  }
+
+  @keyframes page-in {
+    from { opacity: 0; translate: 0 6px; }
+    to   { opacity: 1; translate: 0 0; }
+  }
+
+  /* Table row hover inside all panel sections */
+  .premium-panel tbody tr {
+    transition: background 100ms ease;
+  }
+
+  .premium-panel tbody tr:hover {
+    background: hsl(var(--primary) / 0.03);
+  }
+
+  /* Clickable panel cards (link/button as the panel itself) */
+  a.premium-panel,
+  button.premium-panel {
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  a.premium-panel:hover,
+  button.premium-panel:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px -2px hsl(120 10% 12% / 0.08), 0 12px 40px hsl(120 10% 12% / 0.1);
+    border-color: hsl(var(--ring) / 0.2);
+  }
+
+  .kpi-number {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.015em;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .table-wrap table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .table-wrap table thead th {
+    background: hsl(var(--muted));
+    box-shadow: inset 0 -1px 0 hsl(var(--border));
+  }
+
+  .table-wrap table tbody tr {
+    transition: background 120ms ease;
+  }
+
+  .table-wrap table tbody tr:hover {
+    background: hsl(var(--primary) / 0.04);
+  }
+
+  .form-label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .helper-text {
+    font-size: 0.8125rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .field-error {
+    font-size: 0.8125rem;
+    color: hsl(var(--destructive));
+  }
+
+  .input-error {
+    border-color: hsl(var(--destructive));
+    box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.12);
+  }
+
+  .input-error:focus {
+    border-color: hsl(var(--destructive));
+    box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.18);
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted) / 0.6) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .table-row-hover {
+    transition: background 120ms ease;
+  }
+
+  .table-row-hover:hover {
+    background: hsl(var(--primary) / 0.04);
+  }
+
+  .table-sticky-header thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .table-sticky-header thead th {
+    background: hsl(var(--muted));
+    box-shadow: inset 0 -1px 0 hsl(var(--border));
+  }
+
+  .card-hover {
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -2px hsl(120 10% 12% / 0.08), 0 12px 40px hsl(120 10% 12% / 0.1);
+    border-color: hsl(var(--ring) / 0.3);
+  }
+
+  /* ── Hero fade-in animation ── */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* ── Toast slide-up animation ── */
+  @keyframes toast-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-slide-up {
+    animation: toast-slide-up 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}

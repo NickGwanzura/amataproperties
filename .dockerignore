@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.github
+.claude
+.codex
+.railwayignore
+*.log
+npm-debug.log*
+.env
+.env.local
+.env.*.local
+.DS_Store
+scripts/*.log
+coverage

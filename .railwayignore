@@ -1,0 +1,9 @@
+.git
+.claude
+.codex
+.next
+node_modules
+coverage
+dist
+build
+*.log

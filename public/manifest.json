@@ -1,0 +1,29 @@
+{
+  "name": "Amata Properties",
+  "short_name": "Amata",
+  "description": "A full-service real estate agency for buying, selling, leasing, and managing property across Zimbabwe.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F8F7F7",
+  "theme_color": "#B5121B",
+  "categories": ["real estate", "business", "property"],
+  "lang": "en-ZW",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}
