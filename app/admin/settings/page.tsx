@@ -23,7 +23,7 @@ type AdminSettingsValues = {
 const DEFAULT_ADMIN_SETTINGS: AdminSettingsValues = {
   companyName: "Amata Properties",
   registrationNumber: "",
-  primaryContactEmail: "info@amataproperties.com",
+  primaryContactEmail: "enquiries@amataproperties.co.zw",
   phone: SITE.phone1,
   defaultAgentCommission: "500",
   reservationHoldDays: "14",

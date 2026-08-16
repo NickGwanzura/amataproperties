@@ -47,7 +47,7 @@ const demoUsers: AuthUser[] = process.env.NODE_ENV !== "production" && process.e
       { id: "demo-ceo", name: "Executive", email: "ceo@amataproperties.com", role: "CEO" },
       { id: "demo-admin", name: "Admin User", email: "admin@amataproperties.com", role: "ADMINISTRATOR" },
       { id: "demo-agent", name: "Tariro Moyo", email: "tariro@amataproperties.com", role: "AGENT" },
-      { id: "demo-accounts", name: "Accounts Team", email: "accounts@amataproperties.com", role: "ACCOUNTS" },
+      { id: "demo-accounts", name: "Accounts Team", email: "enquiries@amataproperties.co.zw", role: "ACCOUNTS" },
       { id: "demo-client-nyasha", name: "Nyasha Dube", email: "nyasha@example.com", role: "CLIENT" },
       { id: "demo-client-kundai", name: "Kundai Charamba", email: "kundai@example.com", role: "CLIENT" },
     ]

@@ -23,36 +23,36 @@ export const company = {
   tagline: "A full-service real estate agency for living, investing, and growing.",
 
   /** Primary contact email */
-  email: "sales@amataproperties.com",
+  email: "enquiries@amataproperties.co.zw",
 
   /** Accounts / finance department email */
-  accountsEmail: "accounts@amataproperties.com",
+  accountsEmail: "enquiries@amataproperties.co.zw",
 
   /** Info / general enquiries */
-  infoEmail: "info@amataproperties.com",
+  infoEmail: "enquiries@amataproperties.co.zw",
 
   /** Sales phone lines */
-  phone1: "0774 574 989",
-  phone1Tel: "+263774574989",
+  phone1: "+263 78 699 9404",
+  phone1Tel: "+263786999404",
 
-  phone2: "077 886 6613",
-  phone2Tel: "+263778866613",
+  phone2: "+263 78 699 9404",
+  phone2Tel: "+263786999404",
 
-  phone3: "078 031 9278",
-  phone3Tel: "+263780319278",
+  phone3: "+263 78 699 9404",
+  phone3Tel: "+263786999404",
 
-  phone4: "071 668 4531",
-  phone4Tel: "+263716684531",
+  phone4: "+263 78 699 9404",
+  phone4Tel: "+263786999404",
 
   /** Accounts team */
-  accountsPhone: "+263 78 231 7127",
-  accountsPhoneTel: "+263782317127",
+  accountsPhone: "+263 78 699 9404",
+  accountsPhoneTel: "+263786999404",
 
   /** WhatsApp number (digits only, no +) */
-  whatsapp: "263774574989",
+  whatsapp: "263786999404",
 
   /** Physical address */
-  address: "Zimbabwe",
+  address: "Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe",
 
   /** Country of operation */
   country: "Zimbabwe",
@@ -67,9 +67,6 @@ export const company = {
 /** Sales phone lines as an array for iteration */
 export const SALES_LINES = [
   { number: company.phone1, href: `tel:${company.phone1Tel}` },
-  { number: company.phone2, href: `tel:${company.phone2Tel}` },
-  { number: company.phone3, href: `tel:${company.phone3Tel}` },
-  { number: company.phone4, href: `tel:${company.phone4Tel}` },
 ] as const;
 
 /** WhatsApp link builder */

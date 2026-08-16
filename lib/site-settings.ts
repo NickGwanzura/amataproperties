@@ -21,8 +21,8 @@ export type AdminSettings = {
 export const DEFAULT_ADMIN_SETTINGS: AdminSettings = {
   companyName: "Amata Properties",
   registrationNumber: "",
-  primaryContactEmail: "info@amataproperties.com",
-  phone: "+263 774 574 989",
+  primaryContactEmail: "enquiries@amataproperties.co.zw",
+  phone: "+263 78 699 9404",
   defaultAgentCommission: "500",
   reservationHoldDays: "14",
   defaultInterestRate: "0",

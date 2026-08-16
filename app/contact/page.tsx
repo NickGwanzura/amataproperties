@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, Building2, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "./_form";
-import { SALES_LINES, waLink } from "@/lib/site-config";
+import { company, SALES_LINES, waLink } from "@/config";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b bg-[#0d0d0d] py-20 text-white">
+      <section className="relative overflow-hidden border-b bg-black py-20 text-white sm:py-28">
         {/* Background grid */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -27,19 +27,29 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-primary/25 blur-[100px]" />
         <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-primary/10 blur-[80px]" />
 
-        <div className="relative mx-auto max-w-7xl px-4">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div>
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white/50">
             <Building2 className="size-4 text-primary" />
             Get in touch
           </p>
-          <h1 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-            We&apos;re here to help you<br className="hidden sm:block" />
-            <span className="text-primary"> make your next move</span>
+          <h1 className="max-w-2xl text-5xl font-semibold leading-[0.95] tracking-[-0.05em] sm:text-7xl">
+            Let&apos;s make your<br className="hidden sm:block" />
+            <span className="text-[#f0444c]"> next move.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-white/60">
-            Tell us what you need, call one of our lines, or send us a message. A member of our
-            team will respond within one business day.
+            Tell us what you are buying, selling, renting, valuing, or managing. We&apos;ll bring the
+            right local perspective and a clear next step.
           </p>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f0444c]">Visit the Amata office</p>
+            <p className="mt-4 text-2xl font-semibold leading-tight">Office 210<br />Century House</p>
+            <p className="mt-3 text-sm leading-6 text-white/55">49 Nelson Mandela Avenue<br />Harare, Zimbabwe</p>
+            <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#f0444c]">
+              <Phone className="size-4 text-[#f0444c]" /> {company.phone1}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -49,7 +59,7 @@ export default function ContactPage() {
 
           {/* Address */}
           <a
-            href="https://www.google.com/maps/search/6A+Chatham+Eastlea+Harare"
+            href="https://www.google.com/maps/search/Office+210+Century+House+49+Nelson+Mandela+Avenue+Harare"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
@@ -64,8 +74,8 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 Office
               </p>
-              <p className="mt-2 font-semibold leading-snug">6A Chatham</p>
-              <p className="mt-0.5 text-sm text-muted-foreground">Eastlea, Harare</p>
+              <p className="mt-2 font-semibold leading-snug">Office 210, Century House</p>
+              <p className="mt-0.5 text-sm text-muted-foreground">49 Nelson Mandela Avenue</p>
               <p className="mt-0.5 text-sm text-muted-foreground">Zimbabwe</p>
             </div>
 
@@ -117,7 +127,7 @@ export default function ContactPage() {
 
           {/* Email */}
           <a
-            href="mailto:sales@amataproperties.com"
+            href={`mailto:${company.email}`}
             className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
           >
             {/* Icon */}
@@ -131,8 +141,7 @@ export default function ContactPage() {
                 Email
               </p>
               <div className="mt-2 space-y-1.5">
-                <p className="text-sm font-semibold">sales@amataproperties.com</p>
-                <p className="text-sm text-muted-foreground">info@amataproperties.com</p>
+                <p className="text-sm font-semibold">{company.email}</p>
               </div>
             </div>
 
@@ -196,13 +205,13 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
                 Find us
               </p>
-              <h2 className="mt-1 text-xl font-semibold">6A Chatham, Eastlea, Harare</h2>
+              <h2 className="mt-1 text-xl font-semibold">Office 210, Century House, Harare</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Free parking available on site. Look for the Amata Properties signage.
               </p>
             </div>
             <a
-              href="https://www.google.com/maps/search/6A+Chatham+Eastlea+Harare"
+              href="https://www.google.com/maps/search/Office+210+Century+House+49+Nelson+Mandela+Avenue+Harare"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
@@ -215,7 +224,7 @@ export default function ContactPage() {
           <div className="mt-6 overflow-hidden rounded-2xl border shadow-sm">
             <iframe
               title="Amata Properties office location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.5!2d31.0585!3d-17.8313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4ef5d8a2a97%3A0x1!2s6A+Chatham%2C+Eastlea%2C+Harare%2C+Zimbabwe!5e0!3m2!1sen!2szw!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.5!2d31.0585!3d-17.8313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4ef5d8a2a97%3A0x1!2sCentury+House%2C+Nelson+Mandela+Avenue%2C+Harare!5e0!3m2!1sen!2szw!4v1"
               width="100%"
               height="400"
               style={{ border: 0, display: "block" }}

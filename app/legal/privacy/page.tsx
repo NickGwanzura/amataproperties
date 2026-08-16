@@ -30,7 +30,7 @@ const sections = [
   },
   {
     title: "6. Your Rights",
-    body: "You have the right to access, correct, or request deletion of your personal data held by Amata Properties. To exercise these rights, please contact us at sales@amataproperties.com.",
+    body: "You have the right to access, correct, or request deletion of your personal data held by Amata Properties. To exercise these rights, please contact us at enquiries@amataproperties.co.zw.",
   },
   {
     title: "7. Cookies",

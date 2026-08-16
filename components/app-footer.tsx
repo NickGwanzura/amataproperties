@@ -68,7 +68,7 @@ export function AppFooter() {
 
           <div>
             <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/30">Find us</p>
-            <a href="https://www.google.com/maps/search/6A+Chatham+Eastlea+Harare" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white/55 transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#f0444c]" />6A Chatham, Eastlea,<br />Harare, Zimbabwe</a>
+            <a href="https://www.google.com/maps/search/Office+210+Century+House+49+Nelson+Mandela+Avenue+Harare" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white/55 transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#f0444c]" />Office 210, Century House,<br />49 Nelson Mandela Avenue,<br />Harare, Zimbabwe</a>
             <div className="mt-5 flex items-start gap-3"><Phone className="mt-1 size-4 shrink-0 text-[#f0444c]" /><div className="space-y-1">{SALES_LINES.slice(0, 2).map(({ number, href }) => <a key={number} href={href} className="block text-sm text-white/55 transition hover:text-white">{number}</a>)}</div></div>
             <a href={`mailto:${company.email}`} className="mt-5 block text-sm text-white/55 transition hover:text-white">{company.email}</a>
           </div>

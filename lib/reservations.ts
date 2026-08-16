@@ -107,7 +107,7 @@ export async function reserveStand(
   const agentName = assignedAgent?.user?.name;
   await Promise.all([
     sendNotification({
-      recipient: agentEmail ?? "accounts@amataproperties.com",
+      recipient: agentEmail ?? "enquiries@amataproperties.co.zw",
       subject: `New lead assigned: ${fullName} — ${reference}`,
       body: `You have been assigned a new reservation lead.
 

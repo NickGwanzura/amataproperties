@@ -156,7 +156,7 @@ function Footer({ label }: { label: string }) {
   return (
     <View style={base.footer} fixed>
       <Text style={base.footerText}>
-        6A Chatham, Eastlea, Harare, Zimbabwe  ·  © {new Date().getFullYear()} Amata Properties
+        Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe  ·  © {new Date().getFullYear()} Amata Properties
       </Text>
       <Text style={base.footerBadge}>{label}</Text>
     </View>
@@ -393,7 +393,7 @@ export async function createReceiptPdf(input: {
           <Text>
             For queries, contact {company.accountsEmail} or call {company.accountsPhone}.
           </Text>
-          <Text style={{ marginTop: 3 }}>6A Chatham, Eastlea, Harare, Zimbabwe</Text>
+          <Text style={{ marginTop: 3 }}>Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe</Text>
         </View>
 
         <Footer label="PAYMENT RECEIPT" />
@@ -716,7 +716,7 @@ export async function createStatementPdf(input: {
         {/* Contact footer */}
         <View style={{ marginTop: 14, fontSize: 7.5, color: MUTED }}>
           <Text>
-            For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  6A Chatham, Eastlea, Harare, Zimbabwe
+            For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe
           </Text>
           <Text style={{ marginTop: 3, color: MUTED_LIGHT }}>
             This statement is computer-generated and reflects all transactions recorded as of {input.statementDate}.
@@ -1285,7 +1285,7 @@ export async function createInvoicePdf(input: {
         </View>
 
         <View style={{ fontSize: 7.5, color: MUTED }}>
-          <Text>For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  6A Chatham, Eastlea, Harare, Zimbabwe</Text>
+          <Text>For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe</Text>
         </View>
 
         <Footer label={`INVOICE ${input.invoiceNumber}`} />

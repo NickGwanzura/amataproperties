@@ -88,8 +88,8 @@ export default function FaqPage() {
         <p className="font-semibold">Still have questions?</p>
         <p className="mt-1 text-sm text-white/60">
           Contact our sales team at{" "}
-          <a href="mailto:sales@amataproperties.com" className="font-semibold text-[#f0444c] underline underline-offset-2">
-            sales@amataproperties.com
+          <a href="mailto:enquiries@amataproperties.co.zw" className="font-semibold text-[#f0444c] underline underline-offset-2">
+            enquiries@amataproperties.co.zw
           </a>{" "}
           or call <a href={`tel:${SITE.phone1Tel}`} className="font-semibold text-[#f0444c]">{SITE.phone1}</a>.
         </p>
