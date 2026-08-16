@@ -84,7 +84,7 @@ export default function FaqPage() {
         ))}
       </div>
 
-      <div className="mt-14 rounded-2xl border border-primary/20 bg-[#161314] p-7 text-white shadow-xl shadow-black/10">
+      <div className="mt-14 rounded-2xl border border-primary/20 bg-black p-7 text-white shadow-xl shadow-black/10">
         <p className="font-semibold">Still have questions?</p>
         <p className="mt-1 text-sm text-white/60">
           Contact our sales team at{" "}

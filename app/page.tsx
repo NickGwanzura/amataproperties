@@ -17,7 +17,7 @@ export default async function HomePage() {
       <HeroSlider />
 
       {/* ── Services ── */}
-      <section id="services" className="relative overflow-hidden border-b bg-[#161314] py-16 text-white sm:py-24">
+      <section id="services" className="relative overflow-hidden border-b bg-black py-16 text-white sm:py-24">
         <div className="pointer-events-none absolute -right-20 top-12 size-72 rounded-full bg-[#d71920]/15 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -34,7 +34,7 @@ export default async function HomePage() {
               { icon: BadgeDollarSign, title: "Valuations", desc: "Understand what your property is worth with a clear, market-informed valuation.", href: "/contact" },
               { icon: Home, title: "Sales", desc: "Buy or sell homes and investment property with an experienced agent beside you.", href: "/contact" },
             ].map(({ icon: Icon, title, desc, href }) => (
-              <a key={title} href={href} className="group bg-[#161314] p-6 transition hover:bg-[#d71920]">
+              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#d71920]">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-[#D71920]/15 text-[#F0444C] ring-1 ring-[#D71920]/25 transition group-hover:bg-[#D71920] group-hover:text-white">
                   <Icon className="size-5" />
                 </span>
@@ -114,7 +114,7 @@ export default async function HomePage() {
                 icon: MapPin,
                 title: "Share your brief",
                 desc: "Tell us whether you are buying, selling, renting, valuing, or managing property and what a successful outcome looks like.",
-                color: "bg-[#161314] text-white",
+                color: "bg-black text-white",
                 dot: "bg-primary",
               },
               {
@@ -131,7 +131,7 @@ export default async function HomePage() {
                 title: "Move forward",
                 desc: "We coordinate the viewing, negotiation, paperwork, handover, or ongoing management so the details stay clear and on track.",
                 color: "bg-primary text-white",
-                dot: "bg-[#161314]",
+                dot: "bg-black",
               },
             ].map(({ step, icon: Icon, title, desc, color, dot }) => (
               <div key={step} className="relative flex flex-col items-center text-center">

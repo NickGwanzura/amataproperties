@@ -54,7 +54,7 @@ export function HeroSlider() {
   const move = (direction: number) => setActive((current) => (current + direction + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[min(820px,88vh)] overflow-hidden bg-[#111010] text-white">
+    <section className="relative min-h-[min(820px,88vh)] overflow-hidden bg-black text-white">
       <Image src="/amata-hero.png" alt="Premium Amata property" fill priority className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,8,9,.96)_0%,rgba(10,8,9,.84)_38%,rgba(10,8,9,.22)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(183,18,27,.28),transparent_34%)]" />

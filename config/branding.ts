@@ -34,7 +34,7 @@ export const branding = {
 
   /** Text */
   text: {
-    primary: "#171114",
+    primary: "#000000",
     secondary: "#3A2024",
     muted: "#727272",
     inverse: "#FFFFFF",

@@ -26,7 +26,7 @@ const support = [
 export default function ServicesPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-[#161314] py-20 text-white sm:py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-black py-20 text-white sm:py-28 lg:py-32">
         <div className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full border-[52px] border-[#d71920]/25" />
         <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:px-8">
@@ -49,7 +49,7 @@ export default function ServicesPage() {
         </SectionTitle>
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border/70 bg-border/70 md:grid-cols-2">
           {services.map(({ number, icon: Icon, title, kicker, description, href, action }) => (
-            <article key={title} className="group relative bg-card p-7 transition hover:bg-[#161314] hover:text-white sm:p-9">
+            <article key={title} className="group relative bg-card p-7 transition hover:bg-black hover:text-white sm:p-9">
               <div className="flex items-start justify-between gap-4"><span className="text-[11px] font-semibold tracking-[0.2em] text-primary group-hover:text-[#f0444c]">{number}</span><span className="grid size-11 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"><Icon className="size-5" /></span></div>
               <p className="mt-12 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-white/45">{kicker}</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">{title}</h2>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#d71920] py-20 text-white sm:py-24"><div className="pointer-events-none absolute -right-20 -top-28 size-96 rounded-full border-[48px] border-white/10" /><div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-8 md:flex-row md:items-end md:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">04 — Begin here</p><h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl">Tell us what a better move looks like.</h2></div><Link href="/contact" className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-[#161314] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black">Contact Amata <ArrowRight className="size-4" /></Link></div></section>
+      <section className="relative overflow-hidden bg-[#d71920] py-20 text-white sm:py-24"><div className="pointer-events-none absolute -right-20 -top-28 size-96 rounded-full border-[48px] border-white/10" /><div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-8 md:flex-row md:items-end md:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">04 — Begin here</p><h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl">Tell us what a better move looks like.</h2></div><Link href="/contact" className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black">Contact Amata <ArrowRight className="size-4" /></Link></div></section>
     </main>
   );
 }

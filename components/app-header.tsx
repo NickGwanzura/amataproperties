@@ -92,7 +92,7 @@ export function AppHeader() {
     >
       {/* Announcement bar */}
       {!displayProfile && !isAuthPage && (
-        <div className="border-b border-border/40 bg-[#161314] px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white/70">
+        <div className="border-b border-border/40 bg-black px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white/70">
           <span className="mr-2 inline-block size-1.5 rounded-full bg-[#f0444c] align-middle" />
           A clearer way to move through Zimbabwean property.{" "}
           <Link href="/#developments" className="font-semibold text-primary underline-offset-2 hover:underline">
