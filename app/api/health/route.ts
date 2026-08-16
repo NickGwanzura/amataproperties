@@ -11,7 +11,13 @@ type Check = {
   detail: string;
 };
 
-export async function GET() {
+export async function GET(request: Request) {
+  // Container liveness must not depend on optional integrations or database
+  // readiness; Dokploy uses this probe to decide whether to keep the task up.
+  if (new URL(request.url).searchParams.get("probe") === "liveness") {
+    return NextResponse.json({ status: "ok" });
+  }
+
   const checks: Check[] = [
     {
       name: "DATABASE_URL",
