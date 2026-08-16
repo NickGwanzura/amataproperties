@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://www.amataproperties.com";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://amataproperties.co.zw";
 
   const manifest = {
     name: "Amata Properties",

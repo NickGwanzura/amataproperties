@@ -10,7 +10,7 @@ export const app = {
   name: process.env.NEXT_PUBLIC_APP_NAME || "Amata Properties",
 
   /** Public-facing URL — no trailing slash */
-  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://amataproperties.co.zw",
 
   /** Whether the app is running in production */
   isProduction: process.env.NODE_ENV === "production",

@@ -212,7 +212,7 @@ export async function buildSaleFromReservation(input: SaleInput): Promise<SaleRe
     .from(usersTable)
     .where(inArray(usersTable.role, ["ADMINISTRATOR", "SYSTEM_ADMIN", "ACCOUNTS"]));
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://www.amataproperties.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://amataproperties.co.zw";
   const setPasswordLink = `${appUrl}/reset-password?token=${passwordSetToken}&email=${encodeURIComponent(input.clientEmail)}`;
 
   await Promise.allSettled([

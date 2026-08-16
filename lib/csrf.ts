@@ -15,7 +15,7 @@ export function verifyCsrf(request: Request): NextResponse | null {
 
   const origin = request.headers.get("origin");
   const referer = request.headers.get("referer");
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://www.amataproperties.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://amataproperties.co.zw";
 
   const allowedOrigins = [appUrl];
 

@@ -2,7 +2,7 @@
 // Primary: #B5121B | Accent: #D71920 | Dark: #171114
 import { company } from "@/config";
 
-const BASE = process.env.NEXT_PUBLIC_APP_URL || "https://www.amataproperties.com";
+const BASE = process.env.NEXT_PUBLIC_APP_URL || "https://amataproperties.co.zw";
 const BRAND_COLOR = "#B5121B";
 const ACCENT_COLOR = "#D71920";
 const BRAND_DARK = "#171114";

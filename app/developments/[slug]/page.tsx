@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!dev) return {};
 
   const description = `${dev.description.slice(0, 155).trimEnd()}…`;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://www.amataproperties.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://amataproperties.co.zw";
   const url = `${appUrl}/developments/${slug}`;
 
   const ogImageUrl = dev.heroImage?.startsWith("http") ? dev.heroImage : "/opengraph-image";
