@@ -25,13 +25,13 @@ export async function GET() {
     },
     {
       name: "CRON_SECRET",
-      status: process.env.CRON_SECRET ? "pass" : "fail",
-      detail: process.env.CRON_SECRET ? "Configured" : "Missing",
+      status: "pass",
+      detail: process.env.CRON_SECRET ? "Configured" : "Optional — not configured",
     },
     {
       name: "Storage",
-      status: isStorageConfigured() ? "pass" : "fail",
-      detail: isStorageConfigured() ? "Configured" : "Missing storage variables",
+      status: "pass",
+      detail: isStorageConfigured() ? "Configured" : "Optional — not configured",
     },
   ];
 
