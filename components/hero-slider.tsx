@@ -10,7 +10,7 @@ const slides = [
     label: "Developments",
     title: "Find your next place to build.",
     description: "Explore serviced stands in carefully selected developments, with clear information and a team ready to guide your decision.",
-    href: "#developments",
+    href: "/developments",
     action: "Explore developments",
     icon: Building2,
   },
