@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { company } from "@/config";
 
 export const runtime = "edge";
-export const alt = `${company.name}: Premium Stands in Zimbabwe`;
+export const alt = `${company.name}: Zimbabwe real estate launching 01 September 2026`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -23,7 +23,7 @@ export default function Image() {
           fontFamily: "Manrope, system-ui, -apple-system, sans-serif",
         }}
       >
-        {/* Gold top bar */}
+        {/* Amata red top bar */}
         <div
           style={{
             position: "absolute",
@@ -31,7 +31,7 @@ export default function Image() {
             left: 0,
             right: 0,
             height: "7px",
-            background: "linear-gradient(90deg, #7D0B12, #D71920, #B89050)",
+            background: "linear-gradient(90deg, #7D0B12, #D71920, #F0444C)",
           }}
         />
 
@@ -75,7 +75,7 @@ export default function Image() {
               letterSpacing: "0.02em",
             }}
           >
-            Zimbabwe&apos;s Trusted Property Partner
+            Zimbabwe&apos;s property partner
           </span>
         </div>
 
@@ -112,8 +112,7 @@ export default function Image() {
             maxWidth: "680px",
           }}
         >
-          Buy, sell, lease, and manage property with confidence across Zimbabwe.
-          Browse, reserve, and own. All online.
+          Buy, sell, rent, value, and manage property with confidence across Zimbabwe.
         </div>
 
         {/* Footer row */}
@@ -141,7 +140,7 @@ export default function Image() {
               letterSpacing: "0.04em",
             }}
           >
-            amataproperties.com
+            amataproperties.co.zw
           </span>
         </div>
       </div>

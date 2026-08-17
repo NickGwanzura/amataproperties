@@ -1,15 +1,44 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, CalendarDays, Mail, Phone } from "lucide-react";
+import { appUrl, company } from "@/config";
 import { LaunchCountdown } from "./_countdown";
+import { ShareButton } from "./_share-button";
 
 export const metadata: Metadata = {
-  title: "Launching 01 September | Amata Properties",
-  description: "Amata Properties is launching on 01 September.",
+  title: "Amata Properties Zimbabwe | Launching 01 September 2026",
+  description: "Amata Properties is launching 01 September 2026. Discover a sharper way to buy, sell, rent and manage property across Zimbabwe.",
+  keywords: ["Amata Properties", "Zimbabwe real estate", "Harare property", "property for sale Zimbabwe", "property rentals Harare", "property valuations Zimbabwe"],
+  alternates: { canonical: appUrl("/coming-soon") },
+  openGraph: {
+    type: "website",
+    url: appUrl("/coming-soon"),
+    siteName: company.name,
+    title: "Amata Properties Zimbabwe | Launching 01 September 2026",
+    description: "A sharper way to buy, sell, rent and manage property across Zimbabwe.",
+    images: [{ url: appUrl("/opengraph-image"), width: 1200, height: 630, alt: "Amata Properties — Zimbabwe real estate" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amata Properties Zimbabwe | Launching 01 September 2026",
+    description: "A sharper way to buy, sell, rent and manage property across Zimbabwe.",
+    images: [appUrl("/opengraph-image")],
+  },
 };
 
 export default function ComingSoonPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        name: company.name,
+        url: appUrl(),
+        email: `mailto:${company.email}`,
+        telephone: company.phone1,
+        address: { "@type": "PostalAddress", streetAddress: "Office 210, Century House, 49 Nelson Mandela Avenue", addressLocality: "Harare", addressCountry: "ZW" },
+        areaServed: "Zimbabwe",
+        description: company.tagline,
+      }) }} />
       <div className="grid min-h-screen lg:grid-cols-[1.03fr_0.97fr]">
         <section className="relative flex flex-col justify-between px-6 py-8 sm:px-10 sm:py-10 lg:px-16 lg:py-12">
           <div className="pointer-events-none absolute -left-40 top-1/3 size-[28rem] rounded-full bg-[#D71920]/20 blur-[150px]" />
@@ -50,7 +79,10 @@ export default function ComingSoonPage() {
             </div>
           </div>
 
-          <p className="relative text-[10px] uppercase tracking-[0.2em] text-white/30">Office 210 · Century House · 49 Nelson Mandela Avenue · Harare</p>
+          <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">Office 210 · Century House · 49 Nelson Mandela Avenue · Harare</p>
+            <ShareButton />
+          </div>
         </section>
 
         <section className="relative min-h-[32rem] overflow-hidden lg:min-h-screen">
