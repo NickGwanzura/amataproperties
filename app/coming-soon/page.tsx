@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { LaunchCountdown } from "./_countdown";
 
 export const metadata: Metadata = {
@@ -14,13 +14,8 @@ export default function ComingSoonPage() {
       <div className="pointer-events-none absolute -left-40 top-1/4 size-[32rem] rounded-full bg-[#D71920]/20 blur-[140px]" />
       <div className="pointer-events-none absolute -right-32 -top-32 size-[28rem] rounded-full bg-[#D71920]/15 blur-[120px]" />
 
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-between px-6 py-8 sm:px-10 sm:py-10 lg:px-16">
-        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.24em] text-white/45">
-          <span>Amata Properties</span>
-          <span className="flex items-center gap-2"><MapPin className="size-3.5 text-[#F0444C]" /> Zimbabwe</span>
-        </div>
-
-        <section className="max-w-4xl py-24 sm:py-32 lg:py-40">
+      <div className="relative mx-auto flex w-full max-w-7xl items-center px-6 py-12 sm:px-10 sm:py-16 lg:px-16">
+        <section className="w-full max-w-4xl py-16 sm:py-24 lg:py-32">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#F0444C]/40 bg-[#D71920]/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F0444C]">
             New chapter loading
           </p>
@@ -45,11 +40,6 @@ export default function ComingSoonPage() {
             <LaunchCountdown />
           </div>
         </section>
-
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-[10px] uppercase tracking-[0.18em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>Office 210, Century House · 49 Nelson Mandela Avenue · Harare</span>
-          <span>+263 78 699 9404</span>
-        </div>
       </div>
     </main>
   );
