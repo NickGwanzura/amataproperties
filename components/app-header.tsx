@@ -82,6 +82,8 @@ export function AppHeader() {
     };
   }, [profile]);
 
+  if (pathname === "/coming-soon") return null;
+
   return (
     <header
       className={`sticky top-0 z-40 border-b border-border/60 transition-all duration-300 ${
