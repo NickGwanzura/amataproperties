@@ -27,6 +27,9 @@ RUN addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/.next/standalone ./
+# The startup schema bootstrap runs outside Next's traced server bundle.
+# Include its postgres client explicitly in the standalone runtime image.
+COPY --from=deps /app/node_modules/postgres ./node_modules/postgres
 COPY drizzle/0000_initial.sql ./drizzle/0000_initial.sql
 COPY scripts/bootstrap-db.mjs ./scripts/bootstrap-db.mjs
 
