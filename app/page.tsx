@@ -48,7 +48,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Stats Bar ── */}
-      <section className="border-b bg-[#f3efeb] shadow-sm">
+      <section className="border-b bg-white shadow-sm">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 sm:grid-cols-4">
             {[
             { icon: Building2, label: "Property options", value: String(developments.length) },
@@ -94,7 +94,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Property Journey ── */}
-      <section className="border-y bg-[#f8f6f3] py-20 sm:py-24">
+      <section className="border-y bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
             <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">03 — How we work</p>

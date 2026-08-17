@@ -60,7 +60,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-y bg-[#f3efeb] py-20 sm:py-24">
+      <section className="border-y bg-white py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div><p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">03 — The way we work</p><h2 className="text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">Less noise.<br />More direction.</h2></div>
           <div className="grid gap-0 border-t border-[#1a1515]/15">{support.map((item, index) => <div key={item} className="flex items-center gap-5 border-b border-[#1a1515]/15 py-5"><span className="text-xs font-semibold text-primary">0{index + 1}</span><Check className="size-4 text-primary" /><p className="text-base font-medium text-[#1a1515]">{item}</p></div>)}</div>

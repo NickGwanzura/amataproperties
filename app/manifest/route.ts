@@ -11,7 +11,7 @@ export async function GET() {
     start_url: "/",
     display: "standalone" as const,
     orientation: "portrait-primary" as const,
-    background_color: "#F7F5F0",
+    background_color: "#FFFFFF",
     theme_color: "#B5121B",
     categories: ["real estate", "business", "property"],
     lang: "en-ZW",

@@ -15,8 +15,8 @@ function shell(title: string, body: string): string {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title>
 </head>
-<body style="margin:0;padding:0;background:#FAF8F3;font-family:Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#FAF8F3;padding:32px 16px;">
+<body style="margin:0;padding:0;background:#FFFFFF;font-family:Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#FFFFFF;padding:32px 16px;">
 <tr><td align="center">
 <table width="100%" style="max-width:560px;background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #E0DCD0;">
 
@@ -44,7 +44,7 @@ function shell(title: string, body: string): string {
 
 <!-- FOOTER -->
 <tr>
-  <td style="background:#F4EFE7;padding:20px 32px;border-top:1px solid #E0DCD0;">
+  <td style="background:#FFFFFF;padding:20px 32px;border-top:1px solid #E0DCD0;">
     <p style="margin:0;color:#9ca3af;font-size:11px;line-height:1.7;">
       This is an automated message from ${company.name}. Please do not reply to this email.<br>
       Questions? Contact us at <a href="mailto:${company.infoEmail}" style="color:${ACCENT_COLOR};text-decoration:none;">${company.infoEmail}</a>
@@ -478,7 +478,7 @@ export function statementEmail(data: {
     ${divider()}
     <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:${BRAND_DARK};">Payment History</p>
     <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E0DCD0;border-radius:7px;overflow:hidden;">
-      <tr style="background:#F4EFE7;">
+      <tr style="background:#FFFFFF;">
         <th style="padding:8px 10px;font-size:11px;text-transform:uppercase;color:#6b7280;text-align:left;font-weight:600;border-bottom:1px solid #E0DCD0;">Date</th>
         <th style="padding:8px 10px;font-size:11px;text-transform:uppercase;color:#6b7280;text-align:left;font-weight:600;border-bottom:1px solid #E0DCD0;">Amount</th>
         <th style="padding:8px 10px;font-size:11px;text-transform:uppercase;color:#6b7280;text-align:left;font-weight:600;border-bottom:1px solid #E0DCD0;">Method</th>
@@ -677,7 +677,7 @@ export function standRemovalEmail(data: {
   reason: string;
 }) {
   const standRows = data.standNumbers
-    .map((standNumber) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:7px 10px;border-radius:6px;background:#F4EFE7;border:1px solid #E0DCD0;color:${BRAND_DARK};font-size:13px;font-weight:700;">Stand ${standNumber}</span>`)
+    .map((standNumber) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:7px 10px;border-radius:6px;background:#FFFFFF;border:1px solid #E0DCD0;color:${BRAND_DARK};font-size:13px;font-weight:700;">Stand ${standNumber}</span>`)
     .join("");
 
   const body = `
@@ -741,7 +741,7 @@ export function groupBuyingAnnouncementEmail(data: {
     ${greeting(data.recipientName)}
     ${paragraph("We've just shipped <strong>Group Buying</strong> — a new module for organisations (churches, companies, cooperatives, diaspora associations) buying multiple stands for their members, alongside a Stand Management overhaul and Excel import/export across the platform.")}
 
-    <div style="margin:20px 0;padding:16px 18px;background:#F4EFE7;border:1px solid #E0DCD0;border-radius:8px;">
+    <div style="margin:20px 0;padding:16px 18px;background:#FFFFFF;border:1px solid #E0DCD0;border-radius:8px;">
       <p style="margin:0 0 8px;color:${BRAND_DARK};font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;">What's new, in brief</p>
       <ul style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.75;">
         <li>A 4-step group onboarding wizard: create the group, assign a pool of stands, bulk-import members from CSV or Excel, then invite a group administrator and publish.</li>

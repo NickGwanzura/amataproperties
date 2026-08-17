@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#F8F7F7",
+  "background_color": "#FFFFFF",
   "theme_color": "#B5121B",
   "categories": ["real estate", "business", "property"],
   "lang": "en-ZW",

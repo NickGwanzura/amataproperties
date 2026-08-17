@@ -25,9 +25,9 @@ export const branding = {
 
   /** Background surfaces */
   background: {
-    page: "#F8F7F7",
+    page: "#FFFFFF",
     card: "#FFFFFF",
-    muted: "#F2EEEE",
+    muted: "#FFFFFF",
     warmSand: "#F8E5E7",
     stone: "#E5DFE0",
   },
