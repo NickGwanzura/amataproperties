@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, MapPin } from "lucide-react";
+import { LaunchCountdown } from "./_countdown";
 
 export const metadata: Metadata = {
   title: "Launching 01 September | Amata Properties",
@@ -38,6 +39,10 @@ export default function ComingSoonPage() {
             <a href="mailto:enquiries@amataproperties.co.zw" className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#F0444C]">
               enquiries@amataproperties.co.zw <ArrowUpRight className="size-4" />
             </a>
+          </div>
+          <div className="mt-10">
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">Countdown to launch</p>
+            <LaunchCountdown />
           </div>
         </section>
 
