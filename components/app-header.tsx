@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { LogIn, LogOut, Menu, Phone, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SITE } from "@/lib/site-config";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const dashboardProfiles: Record<string, { name: string; role: string }> = {
   "/sysadmin": { name: "System Admin", role: "Sys Admin" },
@@ -81,8 +82,6 @@ export function AppHeader() {
       cancelled = true;
     };
   }, [profile]);
-
-  if (pathname === "/coming-soon") return null;
 
   return (
     <header
@@ -167,6 +166,8 @@ export function AppHeader() {
 
               <span className="mx-3 hidden h-5 w-px bg-border lg:block" />
 
+              <ThemeToggle />
+
               <Link
                 href="/login"
                 className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border/80 bg-background px-4 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted hover:shadow-md"
@@ -212,6 +213,9 @@ export function AppHeader() {
             ))}
           </nav>
           <div className="mt-4 grid grid-cols-2 gap-2 border-t border-border/40 pt-4">
+            <div className="col-span-2 flex justify-end">
+              <ThemeToggle />
+            </div>
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}

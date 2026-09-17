@@ -24,17 +24,6 @@ const routePermissions: Record<string, string[]> = {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Public launch gate: keep the site private until the announced launch date.
-  // API routes and framework assets remain available for deployment/runtime needs.
-  if (
-    pathname !== "/coming-soon" &&
-    !pathname.startsWith("/api/") &&
-    !pathname.startsWith("/_next/") &&
-    !pathname.includes(".")
-  ) {
-    return NextResponse.redirect(new URL("/coming-soon", request.url));
-  }
-
   // Find which protection rule (if any) applies to this path
   const matchedRule = Object.entries(routePermissions).find(
     ([prefix]) => pathname === prefix || pathname.startsWith(`${prefix}/`),
@@ -68,6 +57,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|coming-soon|api).*)",
+    "/((?!_next/static|_next/image|favicon.ico|api).*)",
   ],
 };
