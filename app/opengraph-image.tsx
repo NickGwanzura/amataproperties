@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { company } from "@/config";
 
 export const runtime = "edge";
-export const alt = `${company.name}: Zimbabwe real estate launching 01 September 2026`;
+export const alt = `${company.name} - Zimbabwe property sales, rentals, and management`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -95,7 +95,7 @@ export default function Image() {
         <div
           style={{
             fontSize: "28px",
-            color: "rgba(255,255,255,0.5)",
+            color: "white",
             marginBottom: "52px",
             lineHeight: 1.3,
           }}
@@ -107,7 +107,7 @@ export default function Image() {
         <div
           style={{
             fontSize: "22px",
-            color: "rgba(255,255,255,0.4)",
+            color: "white",
             lineHeight: 1.5,
             maxWidth: "680px",
           }}
@@ -131,11 +131,11 @@ export default function Image() {
               fontWeight: 800,
             }}
           >
-            S
+            A
           </div>
           <span
             style={{
-              color: "rgba(255,255,255,0.3)",
+            color: "white",
               fontSize: "18px",
               letterSpacing: "0.04em",
             }}
