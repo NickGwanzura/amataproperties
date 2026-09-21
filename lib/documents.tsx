@@ -9,11 +9,11 @@ Font.register({ family: "Geist", src: GEIST_REGULAR_PATH });
 Font.register({ family: "Geist-SemiBold", src: GEIST_SEMIBOLD_PATH });
 
 // Brand palette — Amata Properties
-const GOLD        = "#D71920";
+const GOLD        = "#6A0B14";
 const GOLD_LIGHT  = "#F3E5D0";
 const GOLD_MID    = "#B89050";
-const CHARCOAL    = "#B5121B";
-const FOREST_GREEN = "#B5121B";
+const CHARCOAL    = "#6A0B14";
+const FOREST_GREEN = "#6A0B14";
 const MUTED       = "#5C5A54";
 const MUTED_LIGHT = "#8C8980";
 const BORDER      = "#E0DCD0";
@@ -156,7 +156,7 @@ function Footer({ label }: { label: string }) {
   return (
     <View style={base.footer} fixed>
       <Text style={base.footerText}>
-        Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe  ·  © {new Date().getFullYear()} Amata Properties
+        50 Greendale Avenue, Greendale, Zimbabwe  ·  © {new Date().getFullYear()} Amata Properties
       </Text>
       <Text style={base.footerBadge}>{label}</Text>
     </View>
@@ -393,7 +393,7 @@ export async function createReceiptPdf(input: {
           <Text>
             For queries, contact {company.accountsEmail} or call {company.accountsPhone}.
           </Text>
-          <Text style={{ marginTop: 3 }}>Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe</Text>
+          <Text style={{ marginTop: 3 }}>50 Greendale Avenue, Greendale, Zimbabwe</Text>
         </View>
 
         <Footer label="PAYMENT RECEIPT" />
@@ -716,7 +716,7 @@ export async function createStatementPdf(input: {
         {/* Contact footer */}
         <View style={{ marginTop: 14, fontSize: 7.5, color: MUTED }}>
           <Text>
-            For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe
+            For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  50 Greendale Avenue, Greendale, Zimbabwe
           </Text>
           <Text style={{ marginTop: 3, color: MUTED_LIGHT }}>
             This statement is computer-generated and reflects all transactions recorded as of {input.statementDate}.
@@ -1285,7 +1285,7 @@ export async function createInvoicePdf(input: {
         </View>
 
         <View style={{ fontSize: 7.5, color: MUTED }}>
-          <Text>For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe</Text>
+          <Text>For queries: {company.accountsEmail}  ·  {company.accountsPhone}  ·  50 Greendale Avenue, Greendale, Zimbabwe</Text>
         </View>
 
         <Footer label={`INVOICE ${input.invoiceNumber}`} />

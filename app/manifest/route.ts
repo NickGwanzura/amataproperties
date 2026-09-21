@@ -12,7 +12,7 @@ export async function GET() {
     display: "standalone" as const,
     orientation: "portrait-primary" as const,
     background_color: "#FFFFFF",
-    theme_color: "#B5121B",
+    theme_color: "#6A0B14",
     categories: ["real estate", "business", "property"],
     lang: "en-ZW",
     scope: "/",

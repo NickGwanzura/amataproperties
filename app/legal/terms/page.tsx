@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: "8. Contact",
-    body: "For questions about these Terms of Service, please contact us at enquiries@amataproperties.co.zw or visit our office at Office 210, Century House, 49 Nelson Mandela Avenue, Harare.",
+    body: "For questions about these Terms of Service, please contact us at enquiries@amataproperties.co.zw or visit our office at 50 Greendale Avenue, Greendale, 50 Greendale Avenue, Harare.",
   },
 ];
 

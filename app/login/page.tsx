@@ -24,7 +24,7 @@ export default function LoginPage() {
             </span>
             <span className="flex flex-col leading-none">
               <span className="text-sm font-semibold tracking-tight text-white">Amata</span>
-              <span className="text-[10px] font-medium uppercase tracking-widest text-white/60">Zimbabwe</span>
+              <span className="text-[10px] font-medium uppercase tracking-widest text-white">Zimbabwe</span>
             </span>
           </div>
         </div>

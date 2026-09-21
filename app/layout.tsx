@@ -6,6 +6,7 @@ import "@fontsource/instrument-sans/700.css";
 import { FooterWrapper } from "@/components/footer-wrapper";
 import { AppHeader } from "@/components/app-header";
 import { ToastProvider } from "@/components/toast";
+import { WhatsAppBubble } from "@/components/whatsapp-bubble";
 import { app, appUrl, company } from "@/config";
 import "./globals.css";
 
@@ -37,14 +38,14 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
-      { url: "/amata-mark.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/amata-mark.svg",
+    shortcut: "/favicon.svg",
   },
-  manifest: appUrl("/manifest"),
+  manifest: "/manifest",
   alternates: { canonical: app.url },
   appleWebApp: { capable: true, title: company.shortName, statusBarStyle: "default" },
   other: { "mobile-web-app-capable": "yes" },
@@ -94,7 +95,7 @@ if ("serviceWorker" in navigator) {
     <html lang="en">
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href={appUrl("/manifest")} />
+        <link rel="manifest" href="/manifest" />
       </head>
       <body className="font-sans antialiased">
         {/* Register service worker */}
@@ -107,6 +108,7 @@ if ("serviceWorker" in navigator) {
           <AppHeader />
           {children}
           <FooterWrapper />
+          <WhatsAppBubble />
         </ToastProvider>
       </body>
     </html>

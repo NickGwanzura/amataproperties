@@ -76,7 +76,7 @@ export function DevelopmentCard({
   return (
     <article
       className={cn(
-        "group overflow-hidden rounded-2xl border border-border/60 bg-card shadow-md shadow-black/[0.06] transition-all duration-300 hover:shadow-xl hover:shadow-black/[0.1]",
+        "scroll-reveal group overflow-hidden rounded-2xl border border-border/60 bg-card shadow-md shadow-black/[0.06] transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10",
         horizontal
           ? "flex flex-col lg:flex-row hover:-translate-y-1"
           : "flex flex-col hover:-translate-y-1.5",
@@ -121,7 +121,7 @@ export function DevelopmentCard({
         </div>
         <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
           <div>
-            <p className="text-xs font-medium text-white/70">{development.developerName}</p>
+            <p className="text-xs font-medium text-white">{development.developerName}</p>
             <p className={cn("font-semibold leading-tight text-white drop-shadow-sm", horizontal ? "text-xl lg:text-2xl" : "text-lg")}>{development.name}</p>
           </div>
           <span className="flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">

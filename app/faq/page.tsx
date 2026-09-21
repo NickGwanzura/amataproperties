@@ -86,12 +86,12 @@ export default function FaqPage() {
 
       <div className="mt-14 rounded-2xl border border-primary/20 bg-black p-7 text-white shadow-xl shadow-black/10">
         <p className="font-semibold">Still have questions?</p>
-        <p className="mt-1 text-sm text-white/60">
+        <p className="mt-1 text-sm text-white">
           Contact our sales team at{" "}
-          <a href="mailto:enquiries@amataproperties.co.zw" className="font-semibold text-[#f0444c] underline underline-offset-2">
+          <a href="mailto:enquiries@amataproperties.co.zw" className="font-semibold text-[#6a0b14] underline underline-offset-2">
             enquiries@amataproperties.co.zw
           </a>{" "}
-          or call <a href={`tel:${SITE.phone1Tel}`} className="font-semibold text-[#f0444c]">{SITE.phone1}</a>.
+          or call <a href={`tel:${SITE.phone1Tel}`} className="font-semibold text-[#6a0b14]">{SITE.phone1}</a>.
         </p>
       </div>
     </main>

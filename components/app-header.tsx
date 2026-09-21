@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LogIn, LogOut, Menu, Phone, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SITE } from "@/lib/site-config";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const dashboardProfiles: Record<string, { name: string; role: string }> = {
   "/sysadmin": { name: "System Admin", role: "Sys Admin" },
@@ -87,14 +87,14 @@ export function AppHeader() {
     <header
       className={`sticky top-0 z-40 border-b border-border/60 transition-all duration-300 ${
         scrolled
-          ? "bg-background/97 shadow-[0_1px_24px_rgba(0,0,0,0.10)] backdrop-blur-xl"
-          : "bg-background/90 backdrop-blur-md"
+          ? "bg-white shadow-[0_1px_24px_rgba(0,0,0,0.12)]"
+          : "bg-white shadow-sm"
       }`}
     >
       {/* Announcement bar */}
       {!displayProfile && !isAuthPage && (
-        <div className="border-b border-border/40 bg-black px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white/70">
-          <span className="mr-2 inline-block size-1.5 rounded-full bg-[#f0444c] align-middle" />
+        <div className="border-b border-border/40 bg-black px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white">
+          <span className="mr-2 inline-block size-1.5 rounded-full bg-[#6a0b14] align-middle" />
           A clearer way to move through Zimbabwean property.{" "}
           <Link href="/developments" className="font-semibold text-primary underline-offset-2 hover:underline">
             Explore the brief
@@ -105,10 +105,7 @@ export function AppHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         {/* Amata wordmark */}
         <Link href="/" className="group flex min-w-0 items-center">
-          <span className="flex items-center gap-3">
-            <span className="grid size-10 rotate-[-6deg] place-items-center rounded-[13px] bg-primary text-sm font-semibold tracking-tight text-white shadow-md shadow-primary/20 transition group-hover:rotate-0">A</span>
-            <span className="leading-none"><span className="block text-lg font-semibold tracking-[0.2em] text-foreground">AMATA</span><span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.28em] text-muted-foreground">Property, thoughtfully</span></span>
-          </span>
+          <Image src="/amata-logo.svg" alt="Amata Properties" width={320} height={84} className="h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Dashboard mode */}
@@ -166,8 +163,6 @@ export function AppHeader() {
 
               <span className="mx-3 hidden h-5 w-px bg-border lg:block" />
 
-              <ThemeToggle />
-
               <Link
                 href="/login"
                 className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border/80 bg-background px-4 text-sm font-semibold text-foreground shadow-sm transition hover:bg-muted hover:shadow-md"
@@ -213,13 +208,10 @@ export function AppHeader() {
             ))}
           </nav>
           <div className="mt-4 grid grid-cols-2 gap-2 border-t border-border/40 pt-4">
-            <div className="col-span-2 flex justify-end">
-              <ThemeToggle />
-            </div>
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-background py-2.5 text-sm font-semibold text-foreground"
+              className="col-span-2 inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-background py-2.5 text-sm font-semibold text-foreground"
             >
               <LogIn className="size-4 text-primary" />
               Log In

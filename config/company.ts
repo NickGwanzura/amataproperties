@@ -26,33 +26,33 @@ export const company = {
   email: "enquiries@amataproperties.co.zw",
 
   /** Accounts / finance department email */
-  accountsEmail: "enquiries@amataproperties.co.zw",
+  accountsEmail: "admin@amataproperties.co.zw",
 
   /** Info / general enquiries */
   infoEmail: "enquiries@amataproperties.co.zw",
 
   /** Sales phone lines */
-  phone1: "+263 78 699 9404",
-  phone1Tel: "+263786999404",
+  phone1: "+263 790 054 017",
+  phone1Tel: "+263790054017",
 
-  phone2: "+263 78 699 9404",
-  phone2Tel: "+263786999404",
+  phone2: "+263 790 054 018",
+  phone2Tel: "+263790054018",
 
-  phone3: "+263 78 699 9404",
-  phone3Tel: "+263786999404",
+  phone3: "+263 790 054 017",
+  phone3Tel: "+263790054017",
 
-  phone4: "+263 78 699 9404",
-  phone4Tel: "+263786999404",
+  phone4: "+263 790 054 018",
+  phone4Tel: "+263790054018",
 
   /** Accounts team */
-  accountsPhone: "+263 78 699 9404",
-  accountsPhoneTel: "+263786999404",
+  accountsPhone: "+263 790 054 017",
+  accountsPhoneTel: "+263790054017",
 
   /** WhatsApp number (digits only, no +) */
-  whatsapp: "263786999404",
+  whatsapp: "263790054017",
 
   /** Physical address */
-  address: "Office 210, Century House, 49 Nelson Mandela Avenue, Harare, Zimbabwe",
+  address: "50 Greendale Avenue, Greendale, Zimbabwe",
 
   /** Country of operation */
   country: "Zimbabwe",
@@ -67,6 +67,7 @@ export const company = {
 /** Sales phone lines as an array for iteration */
 export const SALES_LINES = [
   { number: company.phone1, href: `tel:${company.phone1Tel}` },
+  { number: company.phone2, href: `tel:${company.phone2Tel}` },
 ] as const;
 
 /** WhatsApp link builder */

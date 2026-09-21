@@ -9,16 +9,16 @@
 export const branding = {
   /** Primary Amata red */
   primary: {
-    DEFAULT: "#B5121B",
-    light: "#E0222C",
-    dark: "#7D0B12",
+    DEFAULT: "#6A0B14",
+    light: "#6A0B14",
+    dark: "#6A0B14",
     foreground: "#FFFFFF",
   },
 
   /** Accent red */
   accent: {
-    DEFAULT: "#D71920",
-    light: "#F0444C",
+    DEFAULT: "#6A0B14",
+    light: "#6A0B14",
     dark: "#8E0D14",
     foreground: "#FFFFFF",
   },

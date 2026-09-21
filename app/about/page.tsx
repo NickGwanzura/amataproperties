@@ -100,7 +100,7 @@ export default async function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
 
         <div className="relative mx-auto flex min-h-[60vh] max-w-7xl flex-col justify-end px-4 pb-14 text-white">
-          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white/60">
+          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white">
             <Building2 className="size-4 text-primary" />
             About Amata Properties
           </p>
@@ -108,7 +108,7 @@ export default async function AboutPage() {
             A better way to<br className="hidden sm:block" />
             <span className="text-primary"> move through property</span>
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-7 text-white/65">
+          <p className="mt-4 max-w-xl text-base leading-7 text-white">
             Founded in Harare, Amata is a full-service real estate agency helping people and
             businesses make confident property decisions across Zimbabwe.
           </p>
@@ -121,7 +121,7 @@ export default async function AboutPage() {
           {stats.map(({ value, label }) => (
             <div key={label} className="px-8 py-7 text-center">
               <p className="text-3xl font-semibold tracking-tight text-primary">{value}</p>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/40">
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
                 {label}
               </p>
             </div>
@@ -227,7 +227,7 @@ export default async function AboutPage() {
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#D71920 1px, transparent 1px), linear-gradient(90deg, #D71920 1px, transparent 1px)",
+              "linear-gradient(#6A0B14 1px, transparent 1px), linear-gradient(90deg, #6A0B14 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
@@ -238,7 +238,7 @@ export default async function AboutPage() {
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Ready for your next move?
           </h2>
-          <p className="mt-4 text-base leading-7 text-white/55">
+          <p className="mt-4 text-base leading-7 text-white">
             Tell us what you need and let our team help you find the right way forward.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

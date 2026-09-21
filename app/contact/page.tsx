@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "linear-gradient(#D71920 1px, transparent 1px), linear-gradient(90deg, #D71920 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(#6A0B14 1px, transparent 1px), linear-gradient(90deg, #6A0B14 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
@@ -29,25 +29,25 @@ export default function ContactPage() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
-          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white/50">
+          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white">
             <Building2 className="size-4 text-primary" />
             Get in touch
           </p>
           <h1 className="max-w-2xl text-5xl font-semibold leading-[0.95] tracking-[-0.05em] sm:text-7xl">
             Let&apos;s make your<br className="hidden sm:block" />
-            <span className="text-[#f0444c]"> next move.</span>
+            <span className="text-[#6a0b14]"> next move.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-white/60">
+          <p className="mt-5 max-w-xl text-base leading-7 text-white">
             Tell us what you are buying, selling, renting, valuing, or managing. We&apos;ll bring the
             right local perspective and a clear next step.
           </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f0444c]">Visit the Amata office</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6a0b14]">Visit the Amata office</p>
             <p className="mt-4 text-2xl font-semibold leading-tight">Office 210<br />Century House</p>
-            <p className="mt-3 text-sm leading-6 text-white/55">49 Nelson Mandela Avenue<br />Harare, Zimbabwe</p>
-            <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#f0444c]">
-              <Phone className="size-4 text-[#f0444c]" /> {company.phone1}
+            <p className="mt-3 text-sm leading-6 text-white">50 Greendale Avenue<br />Greendale, Zimbabwe</p>
+            <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#6a0b14]">
+              <Phone className="size-4 text-[#6a0b14]" /> {company.phone1}
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
           {/* Address */}
           <a
-            href="https://www.google.com/maps/search/Office+210+Century+House+49+Nelson+Mandela+Avenue+Harare"
+            href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
@@ -74,8 +74,8 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 Office
               </p>
-              <p className="mt-2 font-semibold leading-snug">Office 210, Century House</p>
-              <p className="mt-0.5 text-sm text-muted-foreground">49 Nelson Mandela Avenue</p>
+              <p className="mt-2 font-semibold leading-snug">50 Greendale Avenue, Greendale</p>
+              <p className="mt-0.5 text-sm text-muted-foreground">50 Greendale Avenue</p>
               <p className="mt-0.5 text-sm text-muted-foreground">Zimbabwe</p>
             </div>
 
@@ -205,13 +205,13 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
                 Find us
               </p>
-              <h2 className="mt-1 text-xl font-semibold">Office 210, Century House, Harare</h2>
+              <h2 className="mt-1 text-xl font-semibold">50 Greendale Avenue, Greendale, Harare</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Free parking available on site. Look for the Amata Properties signage.
               </p>
             </div>
             <a
-              href="https://www.google.com/maps/search/Office+210+Century+House+49+Nelson+Mandela+Avenue+Harare"
+              href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

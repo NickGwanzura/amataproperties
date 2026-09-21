@@ -7,7 +7,17 @@ import { ButtonLink, SectionTitle } from "@/components/ui";
 import { getAllDevelopments } from "@/lib/db/queries/developments";
 
 export default async function HomePage() {
-  const developments = await getAllDevelopments();
+  // Keep the public marketing page usable in local development before a
+  // database has been configured. The admin and transactional areas still
+  // require DATABASE_URL, but an empty property list is a valid public state.
+  let developments = [] as Awaited<ReturnType<typeof getAllDevelopments>>;
+  try {
+    developments = await getAllDevelopments();
+  } catch (error) {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn("Unable to load developments; rendering the empty state.", error);
+    }
+  }
 
   const availableStands = developments.reduce((sum, d) => sum + d.stands.filter((s) => s.status === "AVAILABLE").length, 0);
   const soldStands = developments.reduce((sum, d) => sum + d.stands.filter((s) => s.status === "SOLD").length, 0);
@@ -18,14 +28,14 @@ export default async function HomePage() {
 
       {/* ── Services ── */}
       <section id="services" className="relative overflow-hidden border-b bg-black py-16 text-white sm:py-24">
-        <div className="pointer-events-none absolute -right-20 top-12 size-72 rounded-full bg-[#d71920]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 top-12 size-72 rounded-full bg-[#6a0b14]/15 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F0444C]">01 — The Amata brief</p>
-              <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">One point of view.<br /><span className="text-white/45">Every property need.</span></h2>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6A0B14]">01 — The Amata brief</p>
+              <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">One point of view.<br /><span className="text-white">Every property need.</span></h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-white/55">From a first viewing to a full portfolio, our specialists help you make the next move with clarity.</p>
+            <p className="max-w-md text-sm leading-6 text-white">From a first viewing to a full portfolio, our specialists help you make the next move with clarity.</p>
           </div>
           <div className="relative mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -34,13 +44,13 @@ export default async function HomePage() {
               { icon: BadgeDollarSign, title: "Valuations", desc: "Understand what your property is worth with a clear, market-informed valuation.", href: "/contact" },
               { icon: Home, title: "Sales", desc: "Buy or sell homes and investment property with an experienced agent beside you.", href: "/contact" },
             ].map(({ icon: Icon, title, desc, href }) => (
-              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#d71920]">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-[#D71920]/15 text-[#F0444C] ring-1 ring-[#D71920]/25 transition group-hover:bg-[#D71920] group-hover:text-white">
+              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#6a0b14]">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-[#6A0B14]/15 text-[#6A0B14] ring-1 ring-[#6A0B14]/25 transition group-hover:bg-[#6A0B14] group-hover:text-white">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-5 font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/50">{desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#F0444C] group-hover:text-white">Learn more <ArrowRight className="size-3 transition group-hover:translate-x-1" /></span>
+                <p className="mt-2 text-sm leading-6 text-white">{desc}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#6A0B14] group-hover:text-white">Learn more <ArrowRight className="size-3 transition group-hover:translate-x-1" /></span>
               </a>
             ))}
           </div>
@@ -164,7 +174,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section id="reserve" className="relative overflow-hidden bg-[#d71920] py-20 text-white sm:py-24">
+      <section id="reserve" className="relative overflow-hidden bg-[#6a0b14] py-20 text-white sm:py-24">
         <div className="pointer-events-none absolute -right-20 -top-32 size-96 rounded-full border-[48px] border-white/10" />
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">

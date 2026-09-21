@@ -21,7 +21,14 @@ import { SectionTitle } from "@/components/ui";
 import { getAllDevelopments } from "@/lib/db/queries/developments";
 
 export default async function DevelopmentsPage() {
-  const developments = await getAllDevelopments();
+  let developments = [] as Awaited<ReturnType<typeof getAllDevelopments>>;
+  try {
+    developments = await getAllDevelopments();
+  } catch (error) {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn("Unable to load developments; rendering the empty state.", error);
+    }
+  }
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-12">

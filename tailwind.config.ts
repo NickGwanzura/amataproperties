@@ -7,8 +7,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Instrument Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Instrument Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["Netflix Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Netflix Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -84,13 +84,13 @@ export default async function DevelopmentPage({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="relative mx-auto flex min-h-[65vh] max-w-7xl flex-col justify-end px-4 pb-10 text-white">
-          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white/80">
+          <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-white">
             <MapPinned className="size-4" /> {dev.location}, {dev.province}
           </p>
           <h1 className="max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">
             {dev.name}
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white sm:text-lg">
             {dev.description}
           </p>
         </div>

@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("/fonts/NetflixSans-Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(18px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.scroll-reveal {
+  animation: card-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 28%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { animation: none; }
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("/fonts/NetflixSans-Md.ttf") format("truetype");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("/fonts/NetflixSans-MdIt.ttf") format("truetype");
+  font-weight: 500 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* ── Leaflet stand-map label overrides ── */
 .sn-label {
   background: transparent !important;
@@ -66,8 +105,8 @@ html {
 
 :root {
   /* Typography */
-  --font-heading: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-body: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: "Netflix Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: "Netflix Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, monospace;
 
   /* Amata premium red-and-black palette */
@@ -75,13 +114,13 @@ html {
   --foreground: 345 20% 9%;
   --card: 0 0% 100%;
   --card-foreground: 30 33% 9%;
-  --primary: 355 81% 39%;
+  --primary: 354 81% 23%;
   --primary-foreground: 0 0% 100%;
   --secondary: 0 0% 100%;
   --secondary-foreground: 24 20% 16%;
   --muted: 0 0% 100%;
-  --muted-foreground: 30 12% 36%;
-  --accent: 355 80% 46%;
+  --muted-foreground: 0 0% 0%;
+  --accent: 354 81% 23%;
   --accent-foreground: 0 0% 100%;
   --border: 0 0% 88%;
   --input: 0 0% 84%;
@@ -100,13 +139,13 @@ html {
   --foreground: 0 0% 100%;
   --card: 24 20% 10%;
   --card-foreground: 0 0% 100%;
-  --primary: 355 75% 52%;
+  --primary: 354 81% 30%;
   --primary-foreground: 0 0% 100%;
   --secondary: 24 20% 16%;
   --secondary-foreground: 0 0% 100%;
   --muted: 24 20% 14%;
-  --muted-foreground: 33 24% 72%;
-  --accent: 355 80% 40%;
+  --muted-foreground: 0 0% 100%;
+  --accent: 354 81% 30%;
   --accent-foreground: 0 0% 100%;
   --border: 24 20% 22%;
   --input: 24 20% 22%;
