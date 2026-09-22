@@ -27,18 +27,18 @@ export default function ServicesPage() {
   return (
     <main>
       <section className="relative overflow-hidden bg-black py-20 text-white sm:py-28 lg:py-32">
-        <div className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full border-[52px] border-[#6a0b14]/25" />
+        <div className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full border-[52px] border-[#DB1F26]/25" />
         <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:px-8">
           <div>
-            <p className="mb-5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#6a0b14]"><span className="h-px w-8 bg-[#6a0b14]" />02 — Amata services</p>
+            <p className="mb-5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#DB1F26]"><span className="h-px w-8 bg-[#DB1F26]" />02 — Amata services</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.94] tracking-[-0.06em] sm:text-7xl lg:text-8xl">Property,<br /><span className="text-white">thoughtfully handled.</span></h1>
             <p className="mt-7 max-w-xl text-base leading-7 text-white sm:text-lg">Four focused services. One calm, capable team to help you make a better move across Zimbabwe.</p>
           </div>
           <div className="border-l border-white/15 pl-6 lg:mb-2 lg:pl-8">
             <p className="text-sm font-semibold text-white">A more considered agency</p>
             <p className="mt-3 text-sm leading-6 text-white">We bring the market context, human attention, and follow-through that property decisions deserve.</p>
-            <Link href="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#6a0b14] transition hover:text-white">Share your brief <ArrowRight className="size-4" /></Link>
+            <Link href="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#DB1F26] transition hover:text-white">Share your brief <ArrowRight className="size-4" /></Link>
           </div>
         </div>
       </section>
@@ -50,11 +50,11 @@ export default function ServicesPage() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border/70 bg-border/70 md:grid-cols-2">
           {services.map(({ number, icon: Icon, title, kicker, description, href, action }) => (
             <article key={title} className="group relative bg-card p-7 transition hover:bg-black hover:text-white sm:p-9">
-              <div className="flex items-start justify-between gap-4"><span className="text-[11px] font-semibold tracking-[0.2em] text-primary group-hover:text-[#6a0b14]">{number}</span><span className="grid size-11 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"><Icon className="size-5" /></span></div>
+              <div className="flex items-start justify-between gap-4"><span className="text-[11px] font-semibold tracking-[0.2em] text-primary group-hover:text-[#DB1F26]">{number}</span><span className="grid size-11 place-items-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white"><Icon className="size-5" /></span></div>
               <p className="mt-12 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-white">{kicker}</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">{title}</h2>
               <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground group-hover:text-white">{description}</p>
-              <Link href={href} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-[#6a0b14]">{action}<ArrowRight className="size-4 transition group-hover:translate-x-1" /></Link>
+              <Link href={href} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-[#DB1F26]">{action}<ArrowRight className="size-4 transition group-hover:translate-x-1" /></Link>
             </article>
           ))}
         </div>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#6a0b14] py-20 text-white sm:py-24"><div className="pointer-events-none absolute -right-20 -top-28 size-96 rounded-full border-[48px] border-white/10" /><div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-8 md:flex-row md:items-end md:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white">04 — Begin here</p><h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl">Tell us what a better move looks like.</h2></div><Link href="/contact" className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black">Contact Amata <ArrowRight className="size-4" /></Link></div></section>
+      <section className="relative overflow-hidden bg-[#DB1F26] py-20 text-white sm:py-24"><div className="pointer-events-none absolute -right-20 -top-28 size-96 rounded-full border-[48px] border-white/10" /><div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-8 md:flex-row md:items-end md:justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white">04 — Begin here</p><h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl">Tell us what a better move looks like.</h2></div><Link href="/contact" className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black">Contact Amata <ArrowRight className="size-4" /></Link></div></section>
     </main>
   );
 }

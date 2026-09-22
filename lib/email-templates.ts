@@ -1,10 +1,10 @@
 // Branded HTML email templates for Amata Properties
-// Primary: #6A0B14 | Accent: #6A0B14 | Dark: #171114
+// Primary: #DB1F26 | Accent: #DB1F26 | Dark: #171114
 import { company } from "@/config";
 
 const BASE = process.env.NEXT_PUBLIC_APP_URL || "https://amataproperties.co.zw";
-const BRAND_COLOR = "#6A0B14";
-const ACCENT_COLOR = "#6A0B14";
+const BRAND_COLOR = "#DB1F26";
+const ACCENT_COLOR = "#DB1F26";
 const BRAND_DARK = "#171114";
 
 function shell(title: string, body: string): string {

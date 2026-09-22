@@ -227,7 +227,7 @@ export default async function AboutPage() {
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#6A0B14 1px, transparent 1px), linear-gradient(90deg, #6A0B14 1px, transparent 1px)",
+              "linear-gradient(#DB1F26 1px, transparent 1px), linear-gradient(90deg, #DB1F26 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />

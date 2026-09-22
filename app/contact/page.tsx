@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "linear-gradient(#6A0B14 1px, transparent 1px), linear-gradient(90deg, #6A0B14 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(#DB1F26 1px, transparent 1px), linear-gradient(90deg, #DB1F26 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
@@ -35,7 +35,7 @@ export default function ContactPage() {
           </p>
           <h1 className="max-w-2xl text-5xl font-semibold leading-[0.95] tracking-[-0.05em] sm:text-7xl">
             Let&apos;s make your<br className="hidden sm:block" />
-            <span className="text-[#6a0b14]"> next move.</span>
+            <span className="text-[#DB1F26]"> next move.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-white">
             Tell us what you are buying, selling, renting, valuing, or managing. We&apos;ll bring the
@@ -43,11 +43,11 @@ export default function ContactPage() {
           </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6a0b14]">Visit the Amata office</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#DB1F26]">Visit the Amata office</p>
             <p className="mt-4 text-2xl font-semibold leading-tight">Office 210<br />Century House</p>
             <p className="mt-3 text-sm leading-6 text-white">50 Greendale Avenue<br />Greendale, Zimbabwe</p>
-            <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#6a0b14]">
-              <Phone className="size-4 text-[#6a0b14]" /> {company.phone1}
+            <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#DB1F26]">
+              <Phone className="size-4 text-[#DB1F26]" /> {company.phone1}
             </a>
           </div>
         </div>

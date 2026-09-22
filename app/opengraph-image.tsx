@@ -31,7 +31,7 @@ export default function Image() {
             left: 0,
             right: 0,
             height: "7px",
-            background: "linear-gradient(90deg, #6A0B14, #6A0B14, #6A0B14)",
+            background: "linear-gradient(90deg, #DB1F26, #DB1F26, #DB1F26)",
           }}
         />
 
@@ -64,12 +64,12 @@ export default function Image() {
               width: "8px",
               height: "8px",
               borderRadius: "50%",
-              background: "#6A0B14",
+              background: "#DB1F26",
             }}
           />
           <span
             style={{
-              color: "#6A0B14",
+              color: "#DB1F26",
               fontSize: "18px",
               fontWeight: 600,
               letterSpacing: "0.02em",
@@ -122,7 +122,7 @@ export default function Image() {
               width: "40px",
               height: "40px",
               borderRadius: "10px",
-              background: "linear-gradient(135deg, #6A0B14, #6A0B14)",
+              background: "linear-gradient(135deg, #DB1F26, #DB1F26)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

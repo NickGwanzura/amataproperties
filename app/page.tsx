@@ -28,11 +28,11 @@ export default async function HomePage() {
 
       {/* ── Services ── */}
       <section id="services" className="relative overflow-hidden border-b bg-black py-16 text-white sm:py-24">
-        <div className="pointer-events-none absolute -right-20 top-12 size-72 rounded-full bg-[#6a0b14]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 top-12 size-72 rounded-full bg-[#DB1F26]/15 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6A0B14]">01 — The Amata brief</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#DB1F26]">01 — The Amata brief</p>
               <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">One point of view.<br /><span className="text-white">Every property need.</span></h2>
             </div>
             <p className="max-w-md text-sm leading-6 text-white">From a first viewing to a full portfolio, our specialists help you make the next move with clarity.</p>
@@ -44,13 +44,13 @@ export default async function HomePage() {
               { icon: BadgeDollarSign, title: "Valuations", desc: "Understand what your property is worth with a clear, market-informed valuation.", href: "/contact" },
               { icon: Home, title: "Sales", desc: "Buy or sell homes and investment property with an experienced agent beside you.", href: "/contact" },
             ].map(({ icon: Icon, title, desc, href }) => (
-              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#6a0b14]">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-[#6A0B14]/15 text-[#6A0B14] ring-1 ring-[#6A0B14]/25 transition group-hover:bg-[#6A0B14] group-hover:text-white">
+              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#DB1F26]">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-[#DB1F26]/15 text-[#DB1F26] ring-1 ring-[#DB1F26]/25 transition group-hover:bg-[#DB1F26] group-hover:text-white">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-5 font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-white">{desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#6A0B14] group-hover:text-white">Learn more <ArrowRight className="size-3 transition group-hover:translate-x-1" /></span>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#DB1F26] group-hover:text-white">Learn more <ArrowRight className="size-3 transition group-hover:translate-x-1" /></span>
               </a>
             ))}
           </div>
@@ -174,7 +174,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section id="reserve" className="relative overflow-hidden bg-[#6a0b14] py-20 text-white sm:py-24">
+      <section id="reserve" className="relative overflow-hidden bg-[#DB1F26] py-20 text-white sm:py-24">
         <div className="pointer-events-none absolute -right-20 -top-32 size-96 rounded-full border-[48px] border-white/10" />
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">

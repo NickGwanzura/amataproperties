@@ -9,11 +9,11 @@ Font.register({ family: "Geist", src: GEIST_REGULAR_PATH });
 Font.register({ family: "Geist-SemiBold", src: GEIST_SEMIBOLD_PATH });
 
 // Brand palette — Amata Properties
-const GOLD        = "#6A0B14";
+const GOLD        = "#DB1F26";
 const GOLD_LIGHT  = "#F3E5D0";
 const GOLD_MID    = "#B89050";
-const CHARCOAL    = "#6A0B14";
-const FOREST_GREEN = "#6A0B14";
+const CHARCOAL    = "#DB1F26";
+const FOREST_GREEN = "#DB1F26";
 const MUTED       = "#5C5A54";
 const MUTED_LIGHT = "#8C8980";
 const BORDER      = "#E0DCD0";
