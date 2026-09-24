@@ -125,15 +125,17 @@ html {
   --card-foreground: 30 33% 9%;
   --primary: 358 75% 49%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 100%;
+  --secondary: 0 0% 96%;
   --secondary-foreground: 24 20% 16%;
-  --muted: 0 0% 100%;
-  --muted-foreground: 0 0% 0%;
+  /* Subtle neutral surface for hovers, table headers, and skeletons. */
+  --muted: 0 0% 96%;
+  /* Secondary text: ~7.5:1 on white — clearly readable, but below body copy. */
+  --muted-foreground: 0 0% 32%;
   --accent: 358 75% 49%;
   --accent-foreground: 0 0% 100%;
   --border: 0 0% 88%;
   --input: 0 0% 84%;
-  --ring: 34 64% 35%;
+  --ring: 358 75% 49%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --success: 142 71% 35%;
@@ -153,12 +155,12 @@ html {
   --secondary: 24 20% 16%;
   --secondary-foreground: 0 0% 100%;
   --muted: 24 20% 14%;
-  --muted-foreground: 0 0% 100%;
+  --muted-foreground: 0 0% 72%;
   --accent: 358 75% 49%;
   --accent-foreground: 0 0% 100%;
   --border: 24 20% 22%;
   --input: 24 20% 22%;
-  --ring: 34 40% 52%;
+  --ring: 358 75% 58%;
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
   --success: 142 60% 40%;

@@ -35,7 +35,7 @@ export function StatCard({ label, value, detail }: { label: string; value: strin
   );
 }
 
-export function SectionTitle({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: React.ReactNode }) {
+export function SectionTitle({ eyebrow, title, children, as: Heading = "h2" }: { eyebrow?: string; title: string; children?: React.ReactNode; as?: "h1" | "h2" }) {
   return (
     <div className="max-w-3xl">
       {eyebrow ? (
@@ -43,7 +43,7 @@ export function SectionTitle({ eyebrow, title, children }: { eyebrow?: string; t
           <span className="h-px w-7 bg-primary" />{eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-semibold leading-[1.03] tracking-[-0.04em] sm:text-5xl">{title}</h2>
+      <Heading className="text-3xl font-semibold leading-[1.03] tracking-[-0.04em] sm:text-5xl">{title}</Heading>
       {children ? <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">{children}</p> : null}
     </div>
   );

@@ -58,7 +58,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
@@ -97,10 +96,6 @@ if ("serviceWorker" in navigator) {
 
   return (
     <html lang="en">
-      <head>
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest" />
-      </head>
       <body className="font-sans antialiased">
         {/* Register service worker */}
         <script

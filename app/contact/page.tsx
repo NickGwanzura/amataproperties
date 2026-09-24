@@ -37,7 +37,7 @@ export default function ContactPage() {
             Let&apos;s make your<br className="hidden sm:block" />
             <span className="text-[#DB1F26]"> next move.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-white">
+          <p className="mt-5 max-w-xl text-base leading-7 text-white/80">
             Tell us what property opportunity you are seeking, selling, or marketing. We&apos;ll help
             clarify the relevant information and next steps.
           </p>
@@ -45,7 +45,7 @@ export default function ContactPage() {
           <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#DB1F26]">Visit the Amata office</p>
             <p className="mt-4 text-2xl font-semibold leading-tight">Amata Properties</p>
-            <p className="mt-3 text-sm leading-6 text-white">{company.address}</p>
+            <p className="mt-3 text-sm leading-6 text-white/75">{company.address}</p>
             <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#DB1F26]">
               <Phone className="size-4 text-[#DB1F26]" /> {company.phone1}
             </a>
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
           {/* Address */}
           <a
-            href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale"
+            href={company.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="scroll-reveal marketing-card group rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md"
@@ -85,7 +85,7 @@ export default function ContactPage() {
           </a>
 
           {/* Phone */}
-          <div className="rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+          <div className="scroll-reveal marketing-card rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md">
             {/* Icon */}
             <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/10">
               <Phone className="size-5" />
@@ -96,7 +96,7 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 Call us
               </p>
-              <ul className="mt-2 grid grid-cols-2 gap-x-2 gap-y-2.5">
+              <ul className="mt-2 space-y-2">
                 {SALES_LINES.map(({ number, href }) => (
                   <li key={number}>
                     <a
@@ -126,7 +126,7 @@ export default function ContactPage() {
           {/* Email */}
           <a
             href={`mailto:${company.email}`}
-            className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+            className="scroll-reveal marketing-card group rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md"
           >
             {/* Icon */}
             <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/10 transition group-hover:from-primary group-hover:to-primary/80 group-hover:text-white group-hover:ring-primary/30">
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 Email
               </p>
               <div className="mt-2 space-y-1.5">
-                <p className="text-sm font-semibold">{company.email}</p>
+                <p className="break-all text-sm font-semibold">{company.email}</p>
               </div>
             </div>
 
@@ -196,7 +196,7 @@ export default function ContactPage() {
               </p>
             </div>
             <a
-              href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale"
+              href={company.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

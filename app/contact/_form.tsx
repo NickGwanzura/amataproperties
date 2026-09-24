@@ -77,7 +77,7 @@ export function ContactForm() {
             <div>
               <p className="font-semibold">Prefer to call?</p>
               <p className="mt-0.5 text-sm text-muted-foreground">
-                Four direct lines available, no hold music or call centres.
+                Direct lines to our sales team, with no call centres.
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {SALES_LINES.map(({ number, href }) => (
@@ -130,7 +130,7 @@ export function ContactForm() {
               <input
                 name="phone"
                 type="tel"
-                placeholder="07X XXX XXXX"
+                placeholder="+263 7X XXX XXXX"
                 value={form.phone}
                 onChange={handleChange}
                 className="mt-1 w-full"
@@ -162,7 +162,10 @@ export function ContactForm() {
               <option>Reserving a stand</option>
               <option>Payment plan enquiry</option>
               <option>Existing reservation or instalment</option>
-              <option>Agent / partnership enquiry</option>
+              <option>Selling a property</option>
+              <option>Property marketing</option>
+              <option>Developer partnership</option>
+              <option>Agent enquiry</option>
               <option>General enquiry</option>
             </select>
           </label>

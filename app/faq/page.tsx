@@ -1,10 +1,14 @@
-"use client";
-
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
 import { SectionTitle } from "@/components/ui";
-import { SITE } from "@/lib/site-config";
+import { company } from "@/config";
+import { FaqItem } from "./_faq-item";
+
+export const metadata: Metadata = {
+  title: "FAQ",
+  description:
+    "Answers about residential developments, property sales and marketing, advisory, and working with Amata Properties in Zimbabwe.",
+  alternates: { canonical: "/faq" },
+};
 
 const FAQS = [
   {
@@ -34,29 +38,23 @@ const FAQS = [
   },
 ];
 
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-border/70 last:border-b-0">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="group flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-foreground transition hover:text-primary"
-      >
-        {q}
-        <ChevronDown className={cn("size-4 shrink-0 text-muted-foreground transition-transform group-hover:text-primary", open && "rotate-180")} />
-      </button>
-      {open && (
-        <p className="pb-4 text-[14px] leading-relaxed text-muted-foreground">{a}</p>
-      )}
-    </div>
-  );
-}
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.flatMap(({ items }) =>
+    items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  ),
+};
 
 export default function FaqPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-16">
-      <SectionTitle eyebrow="Amata help desk" title="Frequently Asked Questions">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }} />
+      <SectionTitle as="h1" eyebrow="Amata help desk" title="Frequently Asked Questions">
         Clear answers about residential developments, property sales and marketing, advisory, and working with Amata.
       </SectionTitle>
 
@@ -77,12 +75,15 @@ export default function FaqPage() {
 
       <div className="mt-14 rounded-2xl border border-primary/20 bg-black p-7 text-white shadow-xl shadow-black/10">
         <p className="font-semibold">Still have questions?</p>
-        <p className="mt-1 text-sm text-white">
+        <p className="mt-1 text-sm text-white/80">
           Contact our sales team at{" "}
-          <a href="mailto:enquiries@amataproperties.co.zw" className="font-semibold text-[#DB1F26] underline underline-offset-2">
-            enquiries@amataproperties.co.zw
+          <a href={`mailto:${company.email}`} className="font-semibold text-white underline decoration-[#DB1F26] decoration-2 underline-offset-4 hover:decoration-white">
+            {company.email}
           </a>{" "}
-          or call <a href={`tel:${SITE.phone1Tel}`} className="font-semibold text-[#DB1F26]">{SITE.phone1}</a>.
+          or call{" "}
+          <a href={`tel:${company.phone1Tel}`} className="font-semibold text-white underline decoration-[#DB1F26] decoration-2 underline-offset-4 hover:decoration-white">
+            {company.phone1}
+          </a>.
         </p>
       </div>
     </main>

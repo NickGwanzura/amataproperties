@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company, SALES_LINES, waLink } from "@/config";
 
 const exploreLinks = [
@@ -18,6 +18,15 @@ const serviceLinks = [
   { href: "/contact", label: "Advisory & partnerships" },
 ];
 
+const socialIconClass = "grid size-10 place-items-center rounded-full border border-white/15 text-white/80 transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white";
+
+// Only profiles configured in config/company.ts are shown.
+const socialLinks = [
+  { href: company.social.instagram as string, label: "Instagram", icon: Instagram },
+  { href: company.social.linkedin as string, label: "LinkedIn", icon: Linkedin },
+  { href: company.social.facebook as string, label: "Facebook", icon: Facebook },
+].filter((link) => link.href);
+
 export function AppFooter() {
   return (
     <footer className="overflow-hidden bg-[#0d0b0c] text-white">
@@ -29,7 +38,7 @@ export function AppFooter() {
             <h2 className="max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl">
               Property decisions,<br /><span className="text-white">made clearer.</span>
             </h2>
-            <p className="mt-6 max-w-lg text-sm leading-7 text-white sm:text-base">
+            <p className="mt-6 max-w-lg text-sm leading-7 text-white/75 sm:text-base">
               Specialists in residential developments, property sales, marketing, and advisory across Zimbabwe.
             </p>
           </div>
@@ -48,35 +57,38 @@ export function AppFooter() {
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Amata Properties home">
               <Image src="/amata-logo-white.svg" alt="Amata Properties" width={320} height={84} className="h-20 w-auto object-contain" />
             </Link>
-            <p className="mt-6 max-w-xs text-sm leading-6 text-white">{company.tagline}.</p>
+            <p className="mt-6 max-w-xs text-sm leading-6 text-white/70">{company.tagline}.</p>
             <div className="mt-7 flex gap-2">
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid size-10 place-items-center rounded-full border border-white/10 text-white transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white"><Instagram className="size-4" /></a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-10 place-items-center rounded-full border border-white/10 text-white transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white"><Linkedin className="size-4" /></a>
-              <a href={`mailto:${company.email}`} aria-label="Email Amata" className="grid size-10 place-items-center rounded-full border border-white/10 text-white transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white"><Mail className="size-4" /></a>
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={socialIconClass}><Icon className="size-4" /></a>
+              ))}
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Amata" className={socialIconClass}><MessageCircle className="size-4" /></a>
+              <a href={`tel:${company.phone1Tel}`} aria-label="Call Amata" className={socialIconClass}><Phone className="size-4" /></a>
+              <a href={`mailto:${company.email}`} aria-label="Email Amata" className={socialIconClass}><Mail className="size-4" /></a>
             </div>
           </div>
 
           <div>
-            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white">Navigate</p>
-            <ul className="space-y-3">{exploreLinks.map(({ href, label }) => <li key={href}><Link href={href} className="text-sm text-white transition hover:text-white">{label}</Link></li>)}</ul>
+            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">Navigate</p>
+            <ul className="space-y-3">{exploreLinks.map(({ href, label }) => <li key={href}><Link href={href} className="text-sm text-white/75 transition hover:text-white">{label}</Link></li>)}</ul>
           </div>
 
           <div>
-            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white">What we do</p>
-            <ul className="space-y-3">{serviceLinks.map(({ href, label }) => <li key={label}><Link href={href} className="text-sm text-white transition hover:text-white">{label}</Link></li>)}</ul>
+            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">What we do</p>
+            <ul className="space-y-3">{serviceLinks.map(({ href, label }) => <li key={label}><Link href={href} className="text-sm text-white/75 transition hover:text-white">{label}</Link></li>)}</ul>
           </div>
 
           <div>
-            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white">Find us</p>
-            <a href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale+Harare+Zimbabwe" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#DB1F26]" />{company.address}</a>
-            <div className="mt-5 flex items-start gap-3"><Phone className="mt-1 size-4 shrink-0 text-[#DB1F26]" /><div className="space-y-1">{SALES_LINES.slice(0, 2).map(({ number, href }) => <a key={number} href={href} className="block text-sm text-white transition hover:text-white">{number}</a>)}</div></div>
-            <a href={`mailto:${company.email}`} className="mt-5 block text-sm text-white transition hover:text-white">{company.email}</a>
+            <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">Find us</p>
+            <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white/75 transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#DB1F26]" />{company.address}</a>
+            <div className="mt-5 flex items-start gap-3"><Phone className="mt-1 size-4 shrink-0 text-[#DB1F26]" /><div className="space-y-1">{SALES_LINES.slice(0, 2).map(({ number, href }) => <a key={number} href={href} className="block text-sm text-white/75 transition hover:text-white">{number}</a>)}</div></div>
+            <a href={`mailto:${company.email}`} className="mt-5 block text-sm text-white/75 transition hover:text-white">{company.email}</a>
           </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-3 pt-6 text-[11px] text-white sm:flex-row">
-          <span>© 2026 {company.name} {company.legalSuffix}. All rights reserved.</span>
-          <span>Developed &amp; Maintained by <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="font-semibold text-white transition hover:text-white">Spiritus Systems</a> — <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">spiritusglobal.tech</a></span>
+        <div className="flex flex-col justify-between gap-3 pt-6 text-[11px] text-white/55 sm:flex-row">
+          <span>© {new Date().getFullYear()} {company.name} {company.legalSuffix}. All rights reserved.</span>
+          <span>Developed &amp; Maintained by <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="font-semibold text-white/80 transition hover:text-white">Spiritus Systems</a> — <a href="https://spiritusglobal.tech" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">spiritusglobal.tech</a></span>
         </div>
       </section>
     </footer>

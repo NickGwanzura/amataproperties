@@ -54,6 +54,16 @@ export const company = {
   /** Physical address */
   address: "50 Greendale Avenue, Greendale, Harare, Zimbabwe",
 
+  /** Google Maps link for the office */
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=50+Greendale+Avenue%2C+Greendale%2C+Harare%2C+Zimbabwe",
+
+  /** Social profiles — leave blank to hide the icon in the footer */
+  social: {
+    instagram: "",
+    linkedin: "",
+    facebook: "",
+  },
+
   /** Country of operation */
   country: "Zimbabwe",
 

@@ -33,7 +33,9 @@ function getBadges(development: CardDevelopment): Badge[] {
   const committed = sold + reserved + presale;
   const badges: Badge[] = [];
 
-  if (available === 0) {
+  if (total === 0) {
+    badges.push({ label: "Coming Soon", variant: "info" });
+  } else if (available === 0) {
     badges.push({ label: "Sold Out", variant: "danger" });
   } else if (total > 0 && committed / total >= 0.5) {
     badges.push({ label: "On Sale", variant: "success" });
@@ -52,6 +54,7 @@ const badgeStyles: Record<string, { icon: React.ElementType; bg: string; text: s
   "On Sale": { icon: Sparkles, bg: "bg-emerald-500/90", text: "text-white" },
   Promo: { icon: BadgePercent, bg: "bg-amber-500/90", text: "text-white" },
   Available: { icon: () => null, bg: "bg-white/95", text: "text-emerald-800" },
+  "Coming Soon": { icon: () => null, bg: "bg-black/70", text: "text-white" },
 };
 
 export function DevelopmentCard({
@@ -67,10 +70,12 @@ export function DevelopmentCard({
   const sold = development.stands.filter((s) => s.status === "SOLD").length;
   const reserved = development.stands.filter((s) => s.status === "RESERVED").length;
   const presale = development.stands.filter((s) => s.status === "PRESALE").length;
-  const availabilityPct = Math.round((available / total) * 100);
+  const availabilityPct = total > 0 ? Math.round((available / total) * 100) : 0;
   const sizes = development.stands.map((s) => s.sizeSqm);
   const minSize = Math.min(...sizes);
   const maxSize = Math.max(...sizes);
+  // Developments can be published before their stands are imported.
+  const sizeLabel = sizes.length === 0 ? null : minSize === maxSize ? `${minSize} m²` : `${minSize}–${maxSize} m²`;
   const heroImage = development.heroImage?.startsWith("/") ? development.heroImage : PROPERTY_HERO_IMAGE;
 
   return (
@@ -124,10 +129,12 @@ export function DevelopmentCard({
             <p className="text-xs font-medium text-white">{development.developerName}</p>
             <p className={cn("font-semibold leading-tight text-white drop-shadow-sm", horizontal ? "text-xl lg:text-2xl" : "text-lg")}>{development.name}</p>
           </div>
-          <span className="flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-            <Ruler className="size-3" />
-            {minSize}–{maxSize} m²
-          </span>
+          {sizeLabel && (
+            <span className="flex shrink-0 items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+              <Ruler className="size-3" />
+              {sizeLabel}
+            </span>
+          )}
         </div>
       </div>
 
@@ -160,10 +167,12 @@ export function DevelopmentCard({
           </div>
           {horizontal && (
             <>
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <Ruler className="size-3.5 shrink-0 text-primary" />
-                <span>{minSize}–{maxSize} m² stands</span>
-              </div>
+              {sizeLabel && (
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <Ruler className="size-3.5 shrink-0 text-primary" />
+                  <span>{sizeLabel} stands</span>
+                </div>
+              )}
               <div className="flex items-center gap-1.5 font-semibold text-primary">
                 <Sparkles className="size-3.5 shrink-0" />
                 <span>{available} stands left</span>

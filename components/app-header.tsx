@@ -60,6 +60,12 @@ export function AppHeader() {
   }, []);
 
   useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
+  useEffect(() => {
     let cancelled = false;
     if (!profile) {
       setSessionProfile(null);
@@ -97,8 +103,8 @@ export function AppHeader() {
         <div className="border-b border-border/40 bg-black px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white">
           <span className="mr-2 inline-block size-1.5 rounded-full bg-[#DB1F26] align-middle" />
           {company.tagline}.{" "}
-          <Link href="/developments" className="font-semibold text-primary underline-offset-2 hover:underline">
-            Explore the brief
+          <Link href="/developments" className="font-semibold text-white underline decoration-[#DB1F26] decoration-2 underline-offset-4 hover:decoration-white">
+            View developments
           </Link>
         </div>
       )}
@@ -144,10 +150,11 @@ export function AppHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group relative rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                  className={`group relative rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/70 hover:text-foreground ${isActive(link.href) ? "text-foreground" : "text-muted-foreground"}`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-4 right-4 h-[2px] origin-left scale-x-0 rounded-full bg-primary transition-transform duration-200 group-hover:scale-x-100" />
+                  <span className={`absolute bottom-0 left-4 right-4 h-[2px] origin-left rounded-full bg-primary transition-transform duration-200 group-hover:scale-x-100 ${isActive(link.href) ? "scale-x-100" : "scale-x-0"}`} />
                 </Link>
               ))}
 
@@ -185,7 +192,9 @@ export function AppHeader() {
               type="button"
               className="inline-flex size-9 items-center justify-center rounded-lg border border-border/60 bg-background text-muted-foreground transition hover:bg-muted md:hidden"
               onClick={() => setMobileOpen((v) => !v)}
-              aria-label="Toggle menu"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               {mobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
             </button>
@@ -195,14 +204,15 @@ export function AppHeader() {
 
       {/* Mobile menu */}
       {mobileOpen && !displayProfile && (
-        <div className="border-t border-border/60 bg-background/98 px-4 pb-5 pt-3 md:hidden">
+        <div id="mobile-menu" className="border-t border-border/60 bg-background/98 px-4 pb-5 pt-3 md:hidden">
           <nav className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`rounded-lg px-3 py-2.5 text-sm font-medium transition hover:bg-muted hover:text-foreground ${isActive(link.href) ? "bg-muted text-foreground" : "text-muted-foreground"}`}
               >
                 {link.label}
               </Link>
@@ -210,19 +220,26 @@ export function AppHeader() {
           </nav>
           <div className="mt-4 grid grid-cols-2 gap-2 border-t border-border/40 pt-4">
             <Link
-              href="/login"
-              onClick={() => setMobileOpen(false)}
-              className="col-span-2 inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-background py-2.5 text-sm font-semibold text-foreground"
-            >
-              <LogIn className="size-4 text-primary" />
-              Log In
-            </Link>
-            <Link
               href="/developments"
               onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary py-2.5 text-sm font-semibold text-primary-foreground shadow-sm"
             >
-              Reserve
+              Reserve a Stand
+            </Link>
+            <a
+              href={`tel:${SITE.phone1Tel}`}
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-background py-2.5 text-sm font-semibold text-foreground"
+            >
+              <Phone className="size-4 text-primary" />
+              Call us
+            </a>
+            <Link
+              href="/login"
+              onClick={() => setMobileOpen(false)}
+              className="col-span-2 inline-flex items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground"
+            >
+              <LogIn className="size-4 text-primary" />
+              Log In
             </Link>
           </div>
         </div>

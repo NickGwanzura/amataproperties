@@ -34,7 +34,7 @@ export default async function HomePage() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#DB1F26]">01 — The Amata brief</p>
               <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">Connecting you to<br /><span className="text-white">prime opportunities.</span></h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-white">Specialists in residential developments, with practical sales, marketing, and advisory support for clients and developers.</p>
+            <p className="max-w-md text-sm leading-6 text-white/75">Specialists in residential developments, with practical sales, marketing, and advisory support for clients and developers.</p>
           </div>
           <div className="relative mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -48,7 +48,7 @@ export default async function HomePage() {
                   <Icon className="size-5" />
                 </span>
                 <h3 className="mt-5 font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white">{desc}</p>
+                <p className="mt-2 text-sm leading-6 text-white/70 transition-colors group-hover:text-white">{desc}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#DB1F26] group-hover:text-white">Learn more <ArrowRight className="size-3 transition group-hover:translate-x-1" /></span>
               </a>
             ))}
@@ -58,11 +58,12 @@ export default async function HomePage() {
 
       {/* ── At a glance ── */}
       <section className="border-b bg-white shadow-sm">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 sm:grid-cols-4">
-            {[
+        <div className={`mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 ${availableStands > 0 ? "sm:grid-cols-4" : "sm:grid-cols-3"}`}>
+          {[
             { icon: Building2, label: "Our focus", value: "Residential" },
             { icon: MapPin, label: "Based in", value: "Harare" },
-            { icon: TrendingUp, label: "Available stands", value: String(availableStands), highlight: true },
+            // A "0 available" stat reads as "nothing for sale"; only show it when there is stock.
+            ...(availableStands > 0 ? [{ icon: TrendingUp, label: "Available stands", value: String(availableStands), highlight: true }] : []),
             { icon: Handshake, label: "We work with", value: "Developers" },
           ].map((stat) => (
             <div key={stat.label} className="flex items-center gap-3">
@@ -123,6 +124,7 @@ export default async function HomePage() {
                 icon: MapPin,
                 title: "Understand",
                 desc: "We take time to understand your needs and investment objectives.",
+                tag: "Client-centred",
                 color: "bg-black text-white",
                 dot: "bg-primary",
               },
@@ -131,6 +133,7 @@ export default async function HomePage() {
                 icon: ClipboardList,
                 title: "Advise",
                 desc: "We explain relevant property information and acquisition steps.",
+                tag: "Transparent information",
                 color: "bg-[#efe7e1] text-primary",
                 dot: "bg-primary",
               },
@@ -139,6 +142,7 @@ export default async function HomePage() {
                 icon: Building2,
                 title: "Connect",
                 desc: "We connect clients and developers with suitable opportunities.",
+                tag: "Quality opportunities",
                 color: "bg-primary text-white",
                 dot: "bg-black",
               },
@@ -147,6 +151,7 @@ export default async function HomePage() {
                 icon: CreditCard,
                 title: "Facilitate",
                 desc: "We help move enquiries and property transactions forward.",
+                tag: "Professional service",
                 color: "bg-[#efe7e1] text-primary",
                 dot: "bg-primary",
               },
@@ -155,10 +160,11 @@ export default async function HomePage() {
                 icon: Handshake,
                 title: "Build relationships",
                 desc: "We aim to create lasting value for clients and partners.",
+                tag: "Long-term value",
                 color: "bg-black text-white",
                 dot: "bg-primary",
               },
-            ].map(({ step, icon: Icon, title, desc, color, dot }) => (
+            ].map(({ step, icon: Icon, title, desc, tag, color, dot }) => (
               <div key={step} className="scroll-reveal relative flex flex-col items-center text-center">
                 {/* Step circle */}
                 <div className={`relative z-10 mb-5 grid size-20 place-items-center rounded-full border-4 border-background shadow-md ${color}`}>
@@ -171,19 +177,16 @@ export default async function HomePage() {
                 <p className="text-sm leading-6 text-muted-foreground">{desc}</p>
                 <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-primary">
                   <CheckCircle2 className="size-3.5" />
-                  {step === "01" ? "Client-centred" : step === "02" ? "Transparent information" : step === "03" ? "Quality opportunities" : step === "04" ? "Professional service" : "Long-term value"}
+                  {tag}
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-12 flex justify-center">
-            <a
-              href="#reserve"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90 hover:shadow-lg"
-            >
-              Talk to our team <ArrowRight className="size-4" />
-            </a>
+            <ButtonLink href="/contact" className="rounded-full px-7 shadow-md hover:shadow-lg">
+              Talk to our team <ArrowRight className="ml-2 size-4" />
+            </ButtonLink>
           </div>
         </div>
       </section>
@@ -191,7 +194,7 @@ export default async function HomePage() {
       {/* ── CTA Section ── */}
       <section id="reserve" className="relative overflow-hidden bg-[#DB1F26] py-20 text-white sm:py-24">
         <div className="pointer-events-none absolute -right-20 -top-32 size-96 rounded-full border-[48px] border-white/10" />
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] opacity-80">04 — Begin here</p>
             <h2 className="mt-3 text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">Ready for a better move?</h2>
@@ -201,7 +204,7 @@ export default async function HomePage() {
           </div>
           <ButtonLink
             href="/contact"
-            className="shrink-0 bg-accent text-accent-foreground shadow-lg hover:shadow-xl"
+            className="h-12 shrink-0 rounded-full bg-black px-6 text-white shadow-lg shadow-black/20 hover:shadow-xl"
           >
             Contact Amata <ArrowRight className="ml-2 size-4" />
           </ButtonLink>
