@@ -12,10 +12,10 @@ const exploreLinks = [
 ];
 
 const serviceLinks = [
-  { href: "/developments", label: "Selling stands" },
-  { href: "/services", label: "Rentals & management" },
-  { href: "/contact", label: "Property valuations" },
-  { href: "/contact", label: "Homes & sales" },
+  { href: "/developments", label: "Residential developments" },
+  { href: "/contact", label: "Property sales" },
+  { href: "/services", label: "Property marketing" },
+  { href: "/contact", label: "Advisory & partnerships" },
 ];
 
 export function AppFooter() {
@@ -30,7 +30,7 @@ export function AppFooter() {
               Property decisions,<br /><span className="text-white">made clearer.</span>
             </h2>
             <p className="mt-6 max-w-lg text-sm leading-7 text-white sm:text-base">
-              A considered approach to developments, homes, rentals and value across Zimbabwe. Tell us where you are going next.
+              Specialists in residential developments, property sales, marketing, and advisory across Zimbabwe.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -48,7 +48,7 @@ export function AppFooter() {
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Amata Properties home">
               <Image src="/amata-logo-white.svg" alt="Amata Properties" width={320} height={84} className="h-20 w-auto object-contain" />
             </Link>
-            <p className="mt-6 max-w-xs text-sm leading-6 text-white">Zimbabwean property expertise with a more human point of view.</p>
+            <p className="mt-6 max-w-xs text-sm leading-6 text-white">{company.tagline}.</p>
             <div className="mt-7 flex gap-2">
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid size-10 place-items-center rounded-full border border-white/10 text-white transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white"><Instagram className="size-4" /></a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-10 place-items-center rounded-full border border-white/10 text-white transition hover:border-[#DB1F26] hover:bg-[#DB1F26] hover:text-white"><Linkedin className="size-4" /></a>
@@ -68,7 +68,7 @@ export function AppFooter() {
 
           <div>
             <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white">Find us</p>
-            <a href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#DB1F26]" />50 Greendale Avenue, Greendale,<br />50 Greendale Avenue,<br />Greendale, Zimbabwe</a>
+            <a href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale+Harare+Zimbabwe" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-sm leading-6 text-white transition hover:text-white"><MapPin className="mt-1 size-4 shrink-0 text-[#DB1F26]" />{company.address}</a>
             <div className="mt-5 flex items-start gap-3"><Phone className="mt-1 size-4 shrink-0 text-[#DB1F26]" /><div className="space-y-1">{SALES_LINES.slice(0, 2).map(({ number, href }) => <a key={number} href={href} className="block text-sm text-white transition hover:text-white">{number}</a>)}</div></div>
             <a href={`mailto:${company.email}`} className="mt-5 block text-sm text-white transition hover:text-white">{company.email}</a>
           </div>

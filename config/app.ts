@@ -23,7 +23,7 @@ export const app = {
 
   /** Default page metadata description */
   description:
-    "Amata is a full-service real estate agency helping people buy, sell, lease, and manage exceptional property across Zimbabwe.",
+    "Amata Properties connects buyers, investors, sellers, and developers to residential developments and property opportunities across Zimbabwe.",
 } as const;
 
 /** Build URLs relative to the configured application URL */

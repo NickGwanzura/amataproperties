@@ -14,13 +14,13 @@ export const company = {
   shortName: "Amata",
 
   /** Legal suffix used on formal documents */
-  legalSuffix: "(Pvt) Ltd",
+  legalSuffix: "Private Limited",
 
   /** Registered company / business number */
   registrationNumber: "",
 
   /** Tagline */
-  tagline: "A full-service real estate agency for living, investing, and growing.",
+  tagline: "Connecting You to Prime Property Opportunities",
 
   /** Primary contact email */
   email: "enquiries@amataproperties.co.zw",
@@ -52,7 +52,7 @@ export const company = {
   whatsapp: "263790054017",
 
   /** Physical address */
-  address: "50 Greendale Avenue, Greendale, Zimbabwe",
+  address: "50 Greendale Avenue, Greendale, Harare, Zimbabwe",
 
   /** Country of operation */
   country: "Zimbabwe",

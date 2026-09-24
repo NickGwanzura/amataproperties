@@ -2,41 +2,49 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgeDollarSign, Building2, ChevronLeft, ChevronRight, Home, KeyRound, MapPin, Pause, Play, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building2, ChevronLeft, ChevronRight, FileCheck2, Handshake, Home, MapPin, Megaphone, Pause, Play, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const slides = [
   {
     label: "Developments",
     title: "Find your next place to build.",
-    description: "Explore serviced stands in carefully selected developments, with clear information and a team ready to guide your decision.",
+    description: "Explore residential stands in established and emerging developments, with clear information to help you assess each opportunity.",
     href: "/developments",
     action: "Explore developments",
     icon: Building2,
   },
   {
-    label: "Rentals & Management",
-    title: "Live well. Manage better.",
-    description: "Find a home or let your property with dependable support, thoughtful tenant care, and practical ongoing management.",
-    href: "/services",
-    action: "Discover rentals",
-    icon: KeyRound,
-  },
-  {
-    label: "Valuations",
-    title: "Know what your property is worth.",
-    description: "Make confident decisions with a clear, market-informed valuation for your home, land, or investment property.",
+    label: "Property sales",
+    title: "Connect property with its next owner.",
+    description: "We facilitate residential and other suitable property sales, connecting sellers with prospective buyers.",
     href: "/contact",
-    action: "Request a valuation",
-    icon: BadgeDollarSign,
-  },
-  {
-    label: "Sales",
-    title: "Move property with purpose.",
-    description: "Buy or sell houses and investment property with an experienced agent, sharp positioning, and calm negotiation.",
-    href: "/contact",
-    action: "Talk to a sales agent",
+    action: "Discuss a property sale",
     icon: Home,
+  },
+  {
+    label: "Property marketing",
+    title: "Give property opportunities more visibility.",
+    description: "Digital campaigns, social media, showcases, photography, and video help developers and sellers reach prospective clients.",
+    href: "/services",
+    action: "Explore marketing services",
+    icon: Megaphone,
+  },
+  {
+    label: "Property advisory",
+    title: "Understand the details before you decide.",
+    description: "We help clients understand development information, payment structures, documentation, and the property acquisition process.",
+    href: "/contact",
+    action: "Speak with our team",
+    icon: FileCheck2,
+  },
+  {
+    label: "Developer partnerships",
+    title: "Bring developments to more buyers.",
+    description: "We partner with developers and landowners on professional sales and marketing solutions that grow exposure and enquiries.",
+    href: "/contact",
+    action: "Partner with Amata",
+    icon: Handshake,
   },
 ];
 

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { company } from "@/config";
 
 export const runtime = "edge";
-export const alt = `${company.name} - Zimbabwe property sales, rentals, and management`;
+export const alt = `${company.name} - Connecting you to prime property opportunities in Zimbabwe`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -112,7 +112,7 @@ export default function Image() {
             maxWidth: "680px",
           }}
         >
-          Buy, sell, rent, value, and manage property with confidence across Zimbabwe.
+          {company.tagline}
         </div>
 
         {/* Footer row */}

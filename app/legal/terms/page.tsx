@@ -14,7 +14,7 @@ const sections = [
   },
   {
     title: "2. Property Sales and Reservations",
-    body: "All stand reservations are subject to availability and formal approval by Amata Properties (Pvt) Ltd. A reservation form and deposit payment are required to secure a stand. Amata Properties reserves the right to cancel any reservation where payment obligations are not met within the agreed timeframe.",
+    body: "All stand reservations are subject to availability and formal approval by Amata Properties Private Limited. A reservation form and deposit payment are required to secure a stand. Amata Properties reserves the right to cancel any reservation where payment obligations are not met within the agreed timeframe.",
   },
   {
     title: "3. Payment Plans",
@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: "8. Contact",
-    body: "For questions about these Terms of Service, please contact us at enquiries@amataproperties.co.zw or visit our office at 50 Greendale Avenue, Greendale, 50 Greendale Avenue, Harare.",
+    body: "For questions about these Terms of Service, please contact us at enquiries@amataproperties.co.zw or visit Amata Properties Private Limited at 50 Greendale Avenue, Greendale, Harare, Zimbabwe.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
         <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">Legal</p>
         <h1 className="text-3xl font-semibold tracking-tight">Terms of Service</h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          Last updated: June 2026 · Amata Properties (Pvt) Ltd
+          Last updated: June 2026 · Amata Properties Private Limited
         </p>
       </div>
 

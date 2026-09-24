@@ -7,7 +7,7 @@ export async function GET() {
     name: "Amata Properties",
     short_name: "Amata",
     description:
-      "A full-service real estate agency for buying, selling, leasing, and managing property across Zimbabwe.",
+      "Connecting you to prime residential property opportunities across Zimbabwe.",
     start_url: "/",
     display: "standalone" as const,
     orientation: "portrait-primary" as const,

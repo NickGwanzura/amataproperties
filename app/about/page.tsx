@@ -20,64 +20,83 @@ import { waLink } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn how Amata helps people buy, sell, lease, and manage property with clarity and confidence across Zimbabwe.",
+    "Learn how Amata Properties connects buyers, investors, sellers, and developers to residential property opportunities in Zimbabwe.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
     icon: Shield,
-    title: "Clear Advice",
-    desc: "Straightforward guidance that helps you understand the opportunity, the process, and the decision in front of you.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Personal Service",
-    desc: "A responsive team that listens first and stays with you from first conversation to completion.",
-  },
-  {
-    icon: MapPin,
-    title: "Local Expertise",
-    desc: "Deep knowledge of Zimbabwe's neighbourhoods, property market, and the details that matter.",
+    title: "Integrity",
+    desc: "We conduct our business honestly and responsibly.",
   },
   {
     icon: Users,
-    title: "End-to-End Support",
-    desc: "Buying, selling, leasing, and management support under one trusted agency.",
+    title: "Professionalism",
+    desc: "We maintain high standards in our communication, service, and conduct.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Transparency",
+    desc: "We provide clear, relevant property information to support informed decisions.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Excellence",
+    desc: "We continuously seek to improve the quality of our service.",
+  },
+  {
+    icon: Building2,
+    title: "Innovation",
+    desc: "We embrace modern technology and digital marketing to improve the property experience.",
+  },
+  {
+    icon: Handshake,
+    title: "Relationships",
+    desc: "We believe lasting relationships are the foundation of a successful real-estate business.",
   },
 ];
 
-const stats = [
-  { value: "500+", label: "Clients supported" },
-  { value: "6",    label: "Locations served" },
-  { value: "8+",   label: "Years in market" },
-  { value: "100%", label: "Focused on your goals" },
+const clients = [
+  "First-time home buyers",
+  "Families looking to build homes",
+  "Property investors and diaspora investors",
+  "Land and property buyers",
+  "Property developers",
+  "Corporate and institutional clients",
+  "Property owners seeking to sell",
 ];
 
 const process = [
   {
     icon: MapPin,
     step: "01",
-    title: "Tell us your goals",
-    desc: "Share what you are looking for, whether that is a home, investment, tenant, buyer, or a reliable management partner.",
+    title: "Understand",
+    desc: "We take time to understand your needs, requirements, and investment objectives.",
   },
   {
     icon: FileCheck2,
     step: "02",
-    title: "Get a clear shortlist",
-    desc: "We combine your brief with our market knowledge to surface practical opportunities and explain the trade-offs clearly.",
+    title: "Advise",
+    desc: "We explain relevant property information, development details, and acquisition steps.",
   },
   {
-    icon: TrendingUp,
+    icon: Building2,
     step: "03",
-    title: "Move forward confidently",
-    desc: "From viewings and negotiation to paperwork and handover, your agent keeps every next step visible.",
+    title: "Connect",
+    desc: "We connect clients with property opportunities and development partners with prospective buyers.",
   },
   {
     icon: Handshake,
     step: "04",
-    title: "Stay supported",
-    desc: "Our relationship does not end at completion. We remain available for future moves, leasing, and property management needs.",
+    title: "Facilitate",
+    desc: "We support property marketing and help move enquiries and transactions forward.",
+  },
+  {
+    icon: MessageCircle,
+    step: "05",
+    title: "Build relationships",
+    desc: "We aim to create lasting value for clients, development partners, and stakeholders.",
   },
 ];
 
@@ -105,27 +124,23 @@ export default async function AboutPage() {
             About Amata Properties
           </p>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-            A better way to<br className="hidden sm:block" />
-            <span className="text-primary"> move through property</span>
+            Connecting you to<br className="hidden sm:block" />
+            <span className="text-primary"> prime property opportunities</span>
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-white">
-            Founded in Harare, Amata is a full-service real estate agency helping people and
-            businesses make confident property decisions across Zimbabwe.
+            Amata Properties Private Limited is a Zimbabwean real-estate company connecting
+            individuals, families, investors, and businesses with quality property opportunities.
           </p>
         </div>
       </section>
 
       {/* ── Stats strip ──────────────────────────────────────────────── */}
       <div className="border-b border-t bg-[#0d0d0d]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/[0.07] lg:grid-cols-4">
-          {stats.map(({ value, label }) => (
-            <div key={label} className="px-8 py-7 text-center">
-              <p className="text-3xl font-semibold tracking-tight text-primary">{value}</p>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
-                {label}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10">
+          <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">Who we serve</p>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {clients.map((client) => <span key={client} className="rounded-full border border-white/15 px-4 py-2 text-sm text-white">{client}</span>)}
+          </div>
         </div>
       </div>
 
@@ -134,20 +149,22 @@ export default async function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionTitle
-              eyebrow="Our Mission"
-              title="Property advice built around real life"
+              eyebrow="Our mission"
+              title="Connecting people to property opportunities"
             >
-              We believe property should be easier to understand and easier to act on. Amata
-              brings together local knowledge, trusted relationships, and practical technology to
-              make every move more transparent—from first enquiry to final handover.
+              We connect people to property opportunities through professional service,
+              transparent information, and market-driven real-estate solutions. Our aim is to
+              create long-term value for clients, development partners, and stakeholders. Our
+              client-centred approach combines local market knowledge with strategic marketing
+              and clear communication.
             </SectionTitle>
 
             <div className="mt-8 space-y-3">
               {[
-                "Buy, sell, lease, or manage with one team",
-                "Local insight translated into clear choices",
-                "Responsive support at every stage",
-                "A digital experience that keeps you informed",
+                "Residential developments and stand opportunities",
+                "Property sales, marketing, and advisory",
+                "Clear information about pricing, terms, and documentation",
+                "Professional support for clients and developer partners",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 className="size-5 shrink-0 text-primary" />
@@ -179,12 +196,12 @@ export default async function AboutPage() {
       {/* ── Values ───────────────────────────────────────────────────── */}
       <section className="border-t bg-muted/40 py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <SectionTitle eyebrow="Our Values" title="What we stand for" />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionTitle eyebrow="Our values" title="What we stand for" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {values.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+                className="scroll-reveal marketing-card group rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/10 transition group-hover:from-primary group-hover:to-primary/80 group-hover:text-white group-hover:ring-primary/30">
                   <Icon className="size-5" />
@@ -199,10 +216,10 @@ export default async function AboutPage() {
 
       {/* ── How it works ─────────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 py-20">
-        <SectionTitle eyebrow="The Amata way" title="A clearer path to your next property move" />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionTitle eyebrow="Our approach" title="Understand. Advise. Connect. Facilitate. Build relationships." />
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {process.map(({ icon: Icon, step, title, desc }) => (
-            <div key={step} className="relative flex flex-col gap-4">
+            <div key={step} className="scroll-reveal relative flex flex-col gap-4">
               {/* Connector line */}
               <div className="absolute left-6 top-6 -z-10 hidden h-px w-full bg-border lg:block" />
               <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border-2 border-primary/20 bg-background text-primary">
@@ -217,6 +234,36 @@ export default async function AboutPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t bg-white py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-[0.65fr_1.35fr] md:items-start">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Professional standards</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">Our regulatory commitment</h2>
+          </div>
+          <p className="max-w-3xl text-base leading-7 text-foreground">
+            Amata Properties is committed to operating in accordance with applicable regulations
+            and professional standards for estate agency practice in Zimbabwe. The Estate Agents
+            Council (EAC) is the statutory body responsible for regulating estate agency practice.
+            We support continuous professional development and compliance among our property professionals.
+            The company profile also notes the EAC&apos;s stated requirement for firms, from 1 January
+            2027, to employ negotiators who have passed or are exempt from its Negotiators Programme.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t bg-[#0d0d0d] py-16 text-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-2">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Our vision</p>
+            <p className="mt-3 max-w-xl text-2xl font-semibold leading-snug">To become a trusted, recognised real-estate brand in Zimbabwe, known for professionalism, integrity, innovation, and access to quality property opportunities.</p>
+          </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">Our commitment</p>
+            <p className="mt-3 max-w-xl text-base leading-7 text-white">We are building a property platform where buyers, investors, sellers, and developers can connect through professional service and transparent information.</p>
+          </div>
         </div>
       </section>
 

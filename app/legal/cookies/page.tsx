@@ -14,7 +14,7 @@ export default function CookiesPage() {
         <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">Legal</p>
         <h1 className="text-3xl font-semibold tracking-tight">Cookie Policy</h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          Last updated: June 2026 · Amata Properties (Pvt) Ltd
+          Last updated: June 2026 · Amata Properties Private Limited
         </p>
       </div>
 

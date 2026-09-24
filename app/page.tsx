@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { ArrowRight, BadgeDollarSign, Building2, CheckCircle2, ClipboardList, CreditCard, Home, KeyRound, MapPin, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, ClipboardList, CreditCard, Handshake, Home, MapPin, Megaphone, TrendingUp } from "lucide-react";
 import { DevelopmentCard } from "@/components/development-card";
 import { HeroSlider } from "@/components/hero-slider";
 import { ButtonLink, SectionTitle } from "@/components/ui";
@@ -20,7 +20,6 @@ export default async function HomePage() {
   }
 
   const availableStands = developments.reduce((sum, d) => sum + d.stands.filter((s) => s.status === "AVAILABLE").length, 0);
-  const soldStands = developments.reduce((sum, d) => sum + d.stands.filter((s) => s.status === "SOLD").length, 0);
 
   return (
     <main>
@@ -33,18 +32,18 @@ export default async function HomePage() {
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#DB1F26]">01 — The Amata brief</p>
-              <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">One point of view.<br /><span className="text-white">Every property need.</span></h2>
+              <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">Connecting you to<br /><span className="text-white">prime opportunities.</span></h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-white">From a first viewing to a full portfolio, our specialists help you make the next move with clarity.</p>
+            <p className="max-w-md text-sm leading-6 text-white">Specialists in residential developments, with practical sales, marketing, and advisory support for clients and developers.</p>
           </div>
           <div className="relative mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Building2, title: "Developments", desc: "Find and secure serviced stands in carefully selected developments.", href: "/developments" },
-              { icon: KeyRound, title: "Rentals & Management", desc: "Let your property or find a place to live, with dependable ongoing support.", href: "/services" },
-              { icon: BadgeDollarSign, title: "Valuations", desc: "Understand what your property is worth with a clear, market-informed valuation.", href: "/contact" },
-              { icon: Home, title: "Sales", desc: "Buy or sell homes and investment property with an experienced agent beside you.", href: "/contact" },
+              { icon: Building2, title: "Residential developments", desc: "Explore residential stands in established and emerging developments.", href: "/developments" },
+              { icon: Home, title: "Property sales", desc: "Connect property sellers with prospective buyers and facilitate the sales process.", href: "/contact" },
+              { icon: Megaphone, title: "Property marketing", desc: "Showcase property through digital campaigns, social media, photography, and video.", href: "/services" },
+              { icon: Handshake, title: "Advisory & partnerships", desc: "Understand an opportunity or work with us to grow a development’s reach.", href: "/services" },
             ].map(({ icon: Icon, title, desc, href }) => (
-              <a key={title} href={href} className="group bg-black p-6 transition hover:bg-[#DB1F26]">
+              <a key={title} href={href} className="scroll-reveal group bg-black p-6 transition-colors duration-300 hover:bg-[#DB1F26]">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-[#DB1F26]/15 text-[#DB1F26] ring-1 ring-[#DB1F26]/25 transition group-hover:bg-[#DB1F26] group-hover:text-white">
                   <Icon className="size-5" />
                 </span>
@@ -57,14 +56,14 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Stats Bar ── */}
+      {/* ── At a glance ── */}
       <section className="border-b bg-white shadow-sm">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 sm:grid-cols-4">
             {[
-            { icon: Building2, label: "Property options", value: String(developments.length) },
-            { icon: MapPin, label: "Locations served", value: "Zimbabwe" },
-            { icon: TrendingUp, label: "Available now", value: String(availableStands), highlight: true },
-            { icon: Users, label: "Clients supported", value: String(soldStands) },
+            { icon: Building2, label: "Our focus", value: "Residential" },
+            { icon: MapPin, label: "Based in", value: "Harare" },
+            { icon: TrendingUp, label: "Available stands", value: String(availableStands), highlight: true },
+            { icon: Handshake, label: "We work with", value: "Developers" },
           ].map((stat) => (
             <div key={stat.label} className="flex items-center gap-3">
               <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-sm">
@@ -84,8 +83,8 @@ export default async function HomePage() {
       {/* ── Developments Grid ── */}
       <section id="developments" className="mx-auto max-w-7xl px-4 py-20 sm:py-24">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <SectionTitle eyebrow="02 — Property opportunities" title="Find the right property for your next move">
-            Explore land, homes, and investment opportunities with clear pricing, local expertise, and support from first viewing to completion.
+            <SectionTitle eyebrow="02 — Residential developments" title="Explore property opportunities">
+            Browse residential developments and stands, with development information and a team ready to explain the next steps.
           </SectionTitle>
         </div>
         {developments.length === 0 ? (
@@ -114,37 +113,53 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="relative grid gap-8 md:grid-cols-3">
+          <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {/* Connector line (desktop) */}
-            <div className="absolute left-[16.66%] right-[16.66%] top-10 hidden h-px bg-border md:block" />
+            <div className="absolute left-[10%] right-[10%] top-10 hidden h-px bg-border lg:block" />
 
             {[
               {
                 step: "01",
                 icon: MapPin,
-                title: "Share your brief",
-                desc: "Tell us whether you are buying, selling, renting, valuing, or managing property and what a successful outcome looks like.",
+                title: "Understand",
+                desc: "We take time to understand your needs and investment objectives.",
                 color: "bg-black text-white",
                 dot: "bg-primary",
               },
               {
                 step: "02",
                 icon: ClipboardList,
-                title: "Get expert direction",
-                desc: "Your Amata specialist brings the local context, shortlist, valuation, or marketing plan needed to make an informed choice.",
+                title: "Advise",
+                desc: "We explain relevant property information and acquisition steps.",
                 color: "bg-[#efe7e1] text-primary",
                 dot: "bg-primary",
               },
               {
                 step: "03",
-                icon: CreditCard,
-                title: "Move forward",
-                desc: "We coordinate the viewing, negotiation, paperwork, handover, or ongoing management so the details stay clear and on track.",
+                icon: Building2,
+                title: "Connect",
+                desc: "We connect clients and developers with suitable opportunities.",
                 color: "bg-primary text-white",
                 dot: "bg-black",
               },
+              {
+                step: "04",
+                icon: CreditCard,
+                title: "Facilitate",
+                desc: "We help move enquiries and property transactions forward.",
+                color: "bg-[#efe7e1] text-primary",
+                dot: "bg-primary",
+              },
+              {
+                step: "05",
+                icon: Handshake,
+                title: "Build relationships",
+                desc: "We aim to create lasting value for clients and partners.",
+                color: "bg-black text-white",
+                dot: "bg-primary",
+              },
             ].map(({ step, icon: Icon, title, desc, color, dot }) => (
-              <div key={step} className="relative flex flex-col items-center text-center">
+              <div key={step} className="scroll-reveal relative flex flex-col items-center text-center">
                 {/* Step circle */}
                 <div className={`relative z-10 mb-5 grid size-20 place-items-center rounded-full border-4 border-background shadow-md ${color}`}>
                   <Icon className="size-8" />
@@ -156,7 +171,7 @@ export default async function HomePage() {
                 <p className="text-sm leading-6 text-muted-foreground">{desc}</p>
                 <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-primary">
                   <CheckCircle2 className="size-3.5" />
-                  {step === "01" ? "Personal consultation" : step === "02" ? "Clear recommendations" : "End-to-end support"}
+                  {step === "01" ? "Client-centred" : step === "02" ? "Transparent information" : step === "03" ? "Quality opportunities" : step === "04" ? "Professional service" : "Long-term value"}
                 </div>
               </div>
             ))}
@@ -181,7 +196,7 @@ export default async function HomePage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] opacity-80">04 — Begin here</p>
             <h2 className="mt-3 text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-6xl">Ready for a better move?</h2>
             <p className="mt-2 text-base leading-7 opacity-85">
-              Tell us what you need and our team will guide you through the right service, from first conversation to completion and beyond.
+              Tell us what you are looking for. We connect buyers, investors, sellers, and developers with property opportunities.
             </p>
           </div>
           <ButtonLink

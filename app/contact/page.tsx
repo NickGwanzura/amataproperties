@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { ArrowRight, Building2, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Building2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "./_form";
 import { company, SALES_LINES, waLink } from "@/config";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Reach Amata by phone, WhatsApp, or email for buying, selling, leasing, and property management support across Zimbabwe.",
+    "Contact Amata Properties about residential developments, property sales, marketing, advisory, and developer partnerships.",
   alternates: { canonical: "/contact" },
 };
 
@@ -38,14 +38,14 @@ export default function ContactPage() {
             <span className="text-[#DB1F26]"> next move.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-white">
-            Tell us what you are buying, selling, renting, valuing, or managing. We&apos;ll bring the
-            right local perspective and a clear next step.
+            Tell us what property opportunity you are seeking, selling, or marketing. We&apos;ll help
+            clarify the relevant information and next steps.
           </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#DB1F26]">Visit the Amata office</p>
-            <p className="mt-4 text-2xl font-semibold leading-tight">Office 210<br />Century House</p>
-            <p className="mt-3 text-sm leading-6 text-white">50 Greendale Avenue<br />Greendale, Zimbabwe</p>
+            <p className="mt-4 text-2xl font-semibold leading-tight">Amata Properties</p>
+            <p className="mt-3 text-sm leading-6 text-white">{company.address}</p>
             <a href={`tel:${company.phone1Tel}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#DB1F26]">
               <Phone className="size-4 text-[#DB1F26]" /> {company.phone1}
             </a>
@@ -62,7 +62,7 @@ export default function ContactPage() {
             href="https://www.google.com/maps/search/50+Greendale+Avenue+Greendale"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+            className="scroll-reveal marketing-card group rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md"
           >
             {/* Icon */}
             <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/10 transition group-hover:from-primary group-hover:to-primary/80 group-hover:text-white group-hover:ring-primary/30">
@@ -74,9 +74,7 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 Office
               </p>
-              <p className="mt-2 font-semibold leading-snug">50 Greendale Avenue, Greendale</p>
-              <p className="mt-0.5 text-sm text-muted-foreground">50 Greendale Avenue</p>
-              <p className="mt-0.5 text-sm text-muted-foreground">Zimbabwe</p>
+              <p className="mt-2 font-semibold leading-snug">{company.address}</p>
             </div>
 
             {/* Action */}
@@ -152,38 +150,25 @@ export default function ContactPage() {
             </span>
           </a>
 
-          {/* Hours */}
-          <div className="rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+          {/* What we do */}
+          <div className="scroll-reveal marketing-card rounded-2xl border bg-card p-6 shadow-sm hover:border-primary/30 hover:shadow-md">
             {/* Icon */}
             <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/10">
-              <Clock className="size-5" />
+              <Building2 className="size-5" />
             </span>
 
             {/* Content */}
             <div className="mt-5 flex-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                Office Hours
+                Our focus
               </p>
-              <ul className="mt-2 space-y-2.5 text-sm">
-                <li className="flex items-center justify-between gap-3">
-                  <span className="text-muted-foreground">Mon – Fri</span>
-                  <span className="font-semibold">8am – 5pm</span>
-                </li>
-                <li className="flex items-center justify-between gap-3">
-                  <span className="text-muted-foreground">Saturday</span>
-                  <span className="font-semibold">8am – 1pm</span>
-                </li>
-                <li className="flex items-center justify-between gap-3">
-                  <span className="text-muted-foreground">Sunday</span>
-                  <span className="font-semibold text-muted-foreground/70">Closed</span>
-                </li>
-              </ul>
+              <p className="mt-2 text-sm font-semibold leading-6">Residential developments, property sales, marketing, and advisory.</p>
             </div>
 
             {/* Action */}
             <p className="mt-6 flex items-center gap-1.5 text-xs text-muted-foreground">
               <span className="size-1.5 shrink-0 rounded-full bg-emerald-400" />
-              WhatsApp available outside office hours
+              Specialists in residential developments
             </p>
           </div>
 
@@ -205,9 +190,9 @@ export default function ContactPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
                 Find us
               </p>
-              <h2 className="mt-1 text-xl font-semibold">50 Greendale Avenue, Greendale, Harare</h2>
+              <h2 className="mt-1 text-xl font-semibold">{company.address}</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Free parking available on site. Look for the Amata Properties signage.
+                Contact us about residential developments, property sales, marketing, and advisory.
               </p>
             </div>
             <a
@@ -224,7 +209,7 @@ export default function ContactPage() {
           <div className="mt-6 overflow-hidden rounded-2xl border shadow-sm">
             <iframe
               title="Amata Properties office location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.5!2d31.0585!3d-17.8313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4ef5d8a2a97%3A0x1!2sCentury+House%2C+Nelson+Mandela+Avenue%2C+Harare!5e0!3m2!1sen!2szw!4v1"
+              src="https://maps.google.com/maps?q=50%20Greendale%20Avenue%2C%20Greendale%2C%20Harare%2C%20Zimbabwe&output=embed"
               width="100%"
               height="400"
               style={{ border: 0, display: "block" }}

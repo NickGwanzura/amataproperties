@@ -11,7 +11,7 @@ import { app, appUrl, company } from "@/config";
 import "./globals.css";
 
 const DESCRIPTION =
-  "Amata is a full-service real estate agency helping people buy, sell, lease, and manage exceptional property across Zimbabwe.";
+  "Amata Properties connects buyers, investors, sellers, and developers to residential developments and property opportunities across Zimbabwe.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(app.url),
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.shortName}`,
   },
   description: DESCRIPTION,
-  keywords: ["Zimbabwe property", "property for sale", "Harare real estate", "land and stands", "property management"],
+  keywords: ["Zimbabwe property", "residential stands for sale", "Harare property", "residential developments", "property marketing", "property advisory"],
   authors: [{ name: company.name }],
   creator: company.name,
   publisher: company.name,
