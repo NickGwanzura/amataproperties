@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Netflix Sans";
   src: url("/fonts/NetflixSans-Rg.ttf") format("truetype");
   font-weight: 400;
@@ -114,7 +138,7 @@ html {
 
 :root {
   /* Typography */
-  --font-heading: "Netflix Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
   --font-body: "Netflix Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, monospace;
 

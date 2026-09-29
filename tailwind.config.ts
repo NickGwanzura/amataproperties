@@ -8,7 +8,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Netflix Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Netflix Sans", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Cormorant Garamond", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
